@@ -14,6 +14,10 @@ keymap.set("n", "<C-m>", "<C-i>", { desc = "Jump list", noremap = true, silent =
 -- New Tab
 keymap.set("n", "te", "tabedit", { desc = "New Tab", noremap = true, silent = true })
 keymap.set("n", "<tab>", ":tabnext<Return>", { desc = "Next Tab", noremap = true, silent = true })
+keymap.set("n", "<leader>bb", ":b#<CR>", { desc = "Previous Tab", noremap = true, silent = true })
+
+-- Comment
+keymap.set("n", "<C-/>", "gcc", { desc = "Comment out code", noremap = true, silent = true })
 
 -- FileTree
 keymap.set("n", "<C-b>", ":Neotree toggle<CR>", { desc = "Open File Tree", noremap = true, silent = true })

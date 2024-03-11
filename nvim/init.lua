@@ -245,12 +245,12 @@ vim.o.mouse = 'a'
 vim.g.clipboard = {
    name = 'win32yank-wsl',
    copy = {
-       ['+'] = '/path-file/win32yank.exe -i --crlf',
-       ['*'] = '/path-file/win32yank.exe -i --crlf',
+       ['+'] = 'win32yank.exe -i --crlf',
+       ['*'] = 'win32yank.exe -i --crlf',
    },
    paste = {
-       ['+'] = '/path-file/win32yank.exe -o --lf',
-       ['*'] = '/path-file/win32yank.exe -o --lf',
+       ['+'] = 'win32yank.exe -o --lf',
+       ['*'] = 'win32yank.exe -o --lf',
    },
    cache_enabled = 0,
 }
