@@ -1,6 +1,11 @@
 # README
 
-### MacOS Setup
+## Install Fonts
+
+- [Zed Mono](https://github.com/zed-industries/zed-fonts/releases)
+- [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases) - For Terminal Prompts
+
+## MacOS Setup
 
 #### 1. Install
 
