@@ -11,6 +11,7 @@ well.
   - [1. Install](#1-install)
   - [2. Setup Git](#2-setup-git)
   - [3. Setup Starship](#3-setup-starship)
+  - [Additional](#additional)
 
 ## Install Fonts
 
@@ -44,12 +45,6 @@ well.
   curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
   ```
 
-- Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix)
-
-  ```sh
-  brew install mac-mouse-fix
-  ```
-
 #### 2. Setup Git
 
 ```sh
@@ -68,3 +63,20 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 
 # 2. Paste contents of `starship.toml` from here to ~/.config/starship.toml
 ```
+
+#### Additional
+
+<details>
+  <summary>
+    Open
+  </summary>
+
+- [ ] Terminal > Settings > Profile > Keyboard > ✅ Use Option as Meta key.
+- [ ] Install [Rectangle](https://rectangleapp.com/) (Choose the Rectangle keybind setting).
+- [ ] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix).
+
+  ```sh
+  brew install mac-mouse-fix
+  ```
+
+  </details>
