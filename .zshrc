@@ -1,27 +1,24 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# ==============================================================================
+# THEME
+# ==============================================================================
+
+# Get a theme: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Random Theme: ZSH_THEME="random" or ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME="agnoster"
+
+# ==============================================================================
+# BANNER
+# ==============================================================================
+
 # colors.sh
 NO_FORMAT="\033[0m"
 C_CYAN1="\033[38;5;51m"
 C_GOLD1="\033[38;5;220m"
 C_BROWN="\033[38;5;172m"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="crunch"
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# banner
 echo -e -n "${C_CYAN1}"
 echo -e "                   /)-._  "
 echo -e "                  Y. ${C_GOLD1}'${NO_FORMAT}${C_CYAN1} _]  "
@@ -30,12 +27,16 @@ echo -e "          /    \--/   \  "
 echo -e " /)      |   |_        \____  "
 echo -e " \:::::::\___/_\__\_________\  "
 echo -e -n "${NO_FORMAT}"
-echo -e " __  __  __       ______  ______  ______  __      ______    "  
+echo -e " __  __  __       ______  ______  ______  __      ______    "
 echo -e "/\ \_\ \/\ \     /\  ___\/\  __ \/\  == \/\ \    /\  __ \   "
 echo -e "\ \  __ \ \ \    \ \ \___\ \  __ \ \  __<\ \ \___\ \ \/\ \  "
 echo -e " \ \_\ \_\ \_\    \ \_____\ \_\ \_\ \_\ \_\ \_____\ \_____\ "
 echo -e "  \/_/\/_/\/_/     \/_____/\/_/\/_/\/_/ /_/\/_____/\/_____/ "
 echo -e ""
+
+# ==============================================================================
+# OTHER
+# ==============================================================================
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,16 +87,22 @@ echo -e ""
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# ==============================================================================
+# PLUGINS
+# ==============================================================================
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 
-# User configuration
+# ==============================================================================
+# USER CONFIGURATION
+# ==============================================================================
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -121,8 +128,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# bun completions
-[ -s "/home/carlo/.bun/_bun" ] && source "/home/carlo/.bun/_bun"
+# ==============================================================================
+# PATHS
+# ==============================================================================
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
