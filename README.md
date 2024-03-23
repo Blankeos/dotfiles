@@ -15,7 +15,15 @@ well.
 
 ## Install Fonts
 
-- [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) - Set it up on the terminal as well.
+My favorite font is **Zed Mono** ⚡️.
+
+| Font                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) | Official Zed Mono font by zed-industries                                                                                                                                                                                                                                                                                                                                                               |
+| [ZedMono Nerd Font (Unofficial)](/fonts/ZedMonoNerdFont)         | I downloaded this from [cabrinha's fork](https://github.com/cabrinha/nerd-fonts/tree/zed-fonts/patched-fonts/ZedMono) of [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). Sadly, It doesn't look like ryanoasis is planning to [merge cabrinha's PR](https://github.com/ryanoasis/nerd-fonts/pull/1504#issuecomment-2000168602) anytime soon so I have a custom download here instead. |
+
+> [!TIP]
+> Use `ZedMono NF Extended` in VSCode and the Terminal
 
 ## MacOS Setup
 
