@@ -6,14 +6,14 @@ well.
 
 <h2>Table of Contents</h2>
 
-- [Install Fonts](#install-fonts)
-- [MacOS Setup](#macos-setup)
+- [🔤 Install Fonts](#%F0%9F%94%A4-install-fonts)
+- [🖥️ MacOS Setup](#%F0%9F%96%A5%EF%B8%8F-macos-setup)
   - [1. Install](#1-install)
   - [2. Setup Git](#2-setup-git)
   - [3. Setup Starship](#3-setup-starship)
   - [Additional](#additional)
 
-## Install Fonts
+## 🔤 Install Fonts
 
 My favorite font is **Zed Mono** ⚡️.
 
@@ -25,7 +25,7 @@ My favorite font is **Zed Mono** ⚡️.
 > [!TIP]
 > Use `ZedMono NF Extended` in VSCode and the Terminal
 
-## MacOS Setup
+## 🖥️ MacOS Setup
 
 #### 1. Install
 
@@ -76,12 +76,12 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 
 <details>
   <summary>
-    Open
+    😋 Some quirks I like fixed:
   </summary>
 
-- [ ] Terminal > Settings > Profile > Keyboard > ✅ Use Option as Meta key.
-- [ ] Install [Rectangle](https://rectangleapp.com/) (Choose the Rectangle keybind setting).
-- [ ] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix).
+- [x] **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
+- [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
+- [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix).
 
   ```sh
   brew install mac-mouse-fix
