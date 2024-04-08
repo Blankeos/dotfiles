@@ -47,12 +47,6 @@ My favorite font is **Zed Mono** ⚡️.
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
 
-- Install [Bun](https://bun.sh/docs/installation)
-
-  ```sh
-  curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
-  ```
-
 #### 2. Setup Git
 
 ```sh
@@ -76,7 +70,7 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 
 <details>
   <summary>
-    😋 Some quirks I like fixed:
+    ⭐️ MacOS Improvements
   </summary>
 
 - [x] **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
@@ -87,4 +81,38 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   brew install mac-mouse-fix
   ```
 
-  </details>
+</details>
+
+<details>
+  <summary>💿 Development-specific installations</summary>
+
+- [x] PNPM
+
+  ```sh
+  npm install --global pnpm
+  ```
+
+- [x] Node
+
+  ```sh
+  brew install nvm
+  nvm install 20
+  nvm use 20
+  ```
+
+- [x] [Bun](https://bun.sh/docs/installation)
+
+  ```sh
+  curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+  ```
+
+- [x] XZ
+  ```sh
+  brew install xz
+  ```
+- [x] Python
+  ```sh
+  brew install pyenv
+  ```
+
+</details>
