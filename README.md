@@ -8,10 +8,10 @@ well.
 
 - [🔤 Install Fonts](#%F0%9F%94%A4-install-fonts)
 - [🖥️ MacOS Setup](#%F0%9F%96%A5%EF%B8%8F-macos-setup)
-  - [1. Install](#1-install)
-  - [2. Setup Git](#2-setup-git)
-  - [3. Setup Starship](#3-setup-starship)
-  - [Additional](#additional)
+    - [1. Install](#1-install)
+    - [2. Setup Git](#2-setup-git)
+    - [3. Setup Starship](#3-setup-starship)
+    - [Additional](#additional)
 
 ## 🔤 Install Fonts
 
@@ -86,13 +86,13 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 <details>
   <summary>💿 Development-specific installations</summary>
 
-- [x] PNPM
+- [x] PNPM - Better node package manager for some projects.
 
   ```sh
   npm install --global pnpm
   ```
 
-- [x] Node
+- [x] Node - I prefer to install node via nvm.
 
   ```sh
   brew install nvm
@@ -100,17 +100,17 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   nvm use 20
   ```
 
-- [x] [Bun](https://bun.sh/docs/installation)
+- [x] [Bun](https://bun.sh/docs/installation) - Best js/ts runtime (for me).
 
   ```sh
   curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
   ```
 
-- [x] XZ
+- [x] XZ - Need to install this before installing a pyenv version.
   ```sh
   brew install xz
   ```
-- [x] Python
+- [x] Python - I prefer to install python via pyenv.
   ```sh
   brew install pyenv
   ```
