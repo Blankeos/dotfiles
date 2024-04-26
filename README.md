@@ -1,7 +1,9 @@
 <h1>🐟 Carlo's Dotfiles & New Machine Setup</h1>
 
 This repository contains instructions for setting up configs and other installations
-on my machines. I'll be using MacOS only moving forward but will provide guides for Windows as
+on my machines.
+
+This guide will be mainly **MacOS** only moving forward but will provide alternative guides for Windows as
 well.
 
 <h2>Table of Contents</h2>
@@ -81,8 +83,8 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
     ⭐️ MacOS Improvements
   </summary>
 
-- [x] **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
-- [x] **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
+- [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
+- [x] Better backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
   ```sh
   brew install --cask rectangle
