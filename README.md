@@ -8,22 +8,24 @@ well.
 
 - [🔤 Install Fonts](#%F0%9F%94%A4-install-fonts)
 - [🖥️ MacOS Setup](#%F0%9F%96%A5%EF%B8%8F-macos-setup)
-    - [1. Install](#1-install)
-    - [2. Setup Git](#2-setup-git)
-    - [3. Setup Starship](#3-setup-starship)
-    - [Additional](#additional)
+  - [1. Install](#1-install)
+  - [2. Setup Git](#2-setup-git)
+  - [3. Setup Starship](#3-setup-starship)
+  - [Additional](#additional)
 
 ## 🔤 Install Fonts
 
 My favorite font is **Zed Mono** ⚡️.
 
-| Font                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) | Official Zed Mono font by zed-industries                                                                                                                                                                                                                                                                                                                                                               |
-| [ZedMono Nerd Font (Unofficial)](/fonts/ZedMonoNerdFont)         | I downloaded this from [cabrinha's fork](https://github.com/cabrinha/nerd-fonts/tree/zed-fonts/patched-fonts/ZedMono) of [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). Sadly, It doesn't look like ryanoasis is planning to [merge cabrinha's PR](https://github.com/ryanoasis/nerd-fonts/pull/1504#issuecomment-2000168602) anytime soon so I have a custom download here instead. |
+| Font                                                             | Description                                                                                                                                                                                                                                                                     |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) | Official Zed Mono font by zed-industries                                                                                                                                                                                                                                        |
+| [ZedMono Nerd Font](/fonts/ZedMonoNerdFont)                      | I have my own copy at `/fonts/ZedMonoNerdFont`. Downloaded from [cabrinha's fork](https://github.com/cabrinha/nerd-fonts/tree/zed-fonts/patched-fonts/ZedMono) of [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). You can also download from ryanoasis's repo. |
 
-> [!TIP]
-> Use `ZedMono NF Extended` in VSCode and the Terminal
+> [!IMPORTANT]
+> Use `ZedMono NF Extended` in VSCode or Zed (This is the unique name in FontBook)
+>
+> Use `ZedMono Nerd Font` and `Extended` for Terminal or iTerm.
 
 ## 🖥️ MacOS Setup
 
@@ -45,6 +47,12 @@ My favorite font is **Zed Mono** ⚡️.
 
   ```sh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
+
+- Install [iTerm2](https://iterm2.com/)
+
+  ```sh
+  brew install iTerm2 # Renders the Nerd Fonts better.
   ```
 
 #### 2. Setup Git
@@ -74,11 +82,15 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   </summary>
 
 - [x] **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
+- [x] **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
-- [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix).
+  ```sh
+  brew install --cask rectangle
+  ```
+- [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix) - I think it's better than LogiOptions+.
 
   ```sh
-  brew install mac-mouse-fix
+  brew install --cask mac-mouse-fix
   ```
 
 </details>
@@ -100,7 +112,7 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   nvm use 20
   ```
 
-- [x] [Bun](https://bun.sh/docs/installation) - Best js/ts runtime (for me).
+- [x] [Bun](https://bun.sh/docs/installation) - Best js/ts runtime & package manager (for me).
 
   ```sh
   curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
