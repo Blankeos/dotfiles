@@ -125,8 +125,14 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   brew install xz
   ```
 - [x] Python - I prefer to install python via pyenv.
+
   ```sh
   brew install pyenv
+  ```
+
+- [x] Go - My compiled language for backend services.
+  ```sh
+  brew install go
   ```
 
 </details>
