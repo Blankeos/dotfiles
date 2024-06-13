@@ -19,13 +19,15 @@ well.
 
 My favorite font is **Zed Mono** ⚡️.
 
-| Font                                                             | Description                                                                                                                                                                                                                                                                     |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) | Official Zed Mono font by zed-industries                                                                                                                                                                                                                                        |
-| [ZedMono Nerd Font](/fonts/ZedMonoNerdFont)                      | I have my own copy at `/fonts/ZedMonoNerdFont`. Downloaded from [cabrinha's fork](https://github.com/cabrinha/nerd-fonts/tree/zed-fonts/patched-fonts/ZedMono) of [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). You can also download from ryanoasis's repo. |
+| Font                                                             | Description                                                                                                                                                                                                                                                                                                          |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Zed Mono](https://github.com/zed-industries/zed-fonts/releases) | Official Zed Mono font by zed-industries                                                                                                                                                                                                                                                                             |
+| [ZedMono Nerd Font](/fonts/ZedMonoNerdFont)                      | I have my own copy at `"/fonts/ZedMono Nerd Font"`. Downloaded from [cabrinha's fork](https://github.com/cabrinha/nerd-fonts/tree/zed-fonts/patched-fonts/ZedMono) of [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts). You can also download from ryanoasis's repo. I only downloaded the "Extended" |
 
 > [!IMPORTANT]
 > Use `ZedMono NF Extended` in VSCode or Zed (This is the unique name in FontBook)
+>
+> If that doesn't work, use `Zed Mono Nerd Font`, but make sure that you only downloaded the Extended style.
 >
 > Use `ZedMono Nerd Font` and `Extended` for Terminal or iTerm.
 
