@@ -10,10 +10,10 @@ well.
 
 - [🔤 Install Fonts](#%F0%9F%94%A4-install-fonts)
 - [🖥️ MacOS Setup](#%F0%9F%96%A5%EF%B8%8F-macos-setup)
-  - [1. Install](#1-install)
-  - [2. Setup Git](#2-setup-git)
-  - [3. Setup Starship](#3-setup-starship)
-  - [Additional](#additional)
+    - [1. Install](#1-install)
+    - [2. Setup Git](#2-setup-git)
+    - [3. Setup Starship](#3-setup-starship)
+    - [Additional](#additional)
 
 ## 🔤 Install Fonts
 
@@ -133,8 +133,14 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   ```
 
 - [x] Go - My compiled language for backend services.
+
   ```sh
   brew install go
+  ```
+
+- [x] Zig - My preferred low-level compiled language.
+  ```sh
+  brew install zig
   ```
 
 </details>
