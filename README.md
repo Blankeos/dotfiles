@@ -139,8 +139,26 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   ```
 
 - [x] Rust - My preferred low-level compiled language.
+
   ```sh
   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
   ```
+
+- [x] Defold - My preferred game engine.
+  ```sh
+  brew install --cask defold
+  ```
+
+</details>
+
+<details>
+  <summary>⭐️ Cool Stuff</summary>
+
+- [x] Bruno - API Testing - `brew install --cask bruno`
+- [x] Handbrake - Video Converter - `brew install --cask handbrake`
+- [x] Keycastr - Keypress visualzier - `brew install --cask keycastr`
+- [x] Screen Studio - Slick Screen Recorder - `brew install --cask screen-studio`
+- [x] Rotato - Cool mockups - `brew install --cask rotato`
+- [x] Licecap - GIFs - `brew install --cask licecap`
 
 </details>
