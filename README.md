@@ -67,6 +67,11 @@ brew install gh
 
 # Login
 gh auth login
+
+# (Additionally) For work if you have multiple accounts
+gh auth setup-git # Only need to run once
+gh auth switch # switch between logged in accounts.
+gh auth status # check which account is logged in.
 ```
 
 #### 3. Setup Starship
