@@ -135,6 +135,8 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 
   ```sh
   brew install pyenv
+  pyenv install 3.12
+  pyenv global 3.12
   ```
 
 - [x] Go - My compiled language for backend services.
@@ -149,12 +151,69 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
   ```
 
+- [x] [Gleam](https://gleam.run/getting-started/installing/) - My preferred functional programming language on the BEAM VM.
+
+  ```sh
+  brew install gleam
+  ```
+
 - [x] Defold - My preferred game engine.
+
   ```sh
   brew install --cask defold
   ```
 
-</details>
+- [x] Android Platform Tools - For `adb devices` and `adb logcat -s defold` (useful for debugging Defold games). Can actually also be installed with Android Studio.
+
+  ```sh
+  brew install android-platform-tools
+  ```
+
+- [x] Android Studio - For the android simulator and SDK Tools. Haven't used it for anything else.
+
+  ```sh
+  brew install --cask android-studio
+
+  # Install Command-line Tools (Needed by flutter doctor)
+  - Go to Settings (Cmd + ,) > Language & Frameworks > Android SDK > SDK Tools > Android SDK Command-line Tools (latest) > OK
+  ```
+
+- [x] XCode - For the iOS simulator and SDK Tools.
+
+  ```sh
+  xcode-select -install # I think you can run any xcode command and it will prompt you to install in App Store.
+  xcrun xctrace list device # Check all simulators
+
+  # Install iOS Platform SDK (Needed by flutter doctor)
+  - Go to XCode > Settings > Components > Platform Support (Make sure iOS is installed)
+  - Go to XCode > Window > Devices & Simulator (Shift + Command + 2)
+  ```
+
+- [x] Java - for `keytool` and android tools with defold.
+
+  ```sh
+  brew install openjdk
+  # Make sure to follow the instructions to symlink it to path so `java -version` works.
+  ```
+
+- [x] Cocoapods - For installing dependencies for iOS in mobile projects.
+
+  ```sh
+  brew install cocoapods
+  ```
+
+- [x] [Flutter](https://docs.flutter.dev/get-started/install) - For mobile development.
+
+  ```sh
+  brew tap leoafarias/fvm
+  brew install fvm
+  fvm install stable
+  fvm global stable
+  export PATH=$PATH:"$HOME/fvm/default/bin" # Add to .zshrc
+  flutter doctor # Check if it's working.
+  ```
+
+  </details>
 
 <details>
   <summary>⭐️ Cool Stuff</summary>
