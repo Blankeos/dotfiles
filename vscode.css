@@ -2,6 +2,52 @@
   font-family: "ZedMono Nerd Font";
 }
 
+/* GLASS */
+/* html {
+  background: transparent !important;
+}
+
+.minimap {
+  opacity: 0.6;
+}
+
+.editor-container {
+  background: transparent !important;
+}
+
+body {
+  background: transparent !important;
+}
+
+.editor-group-container > .tabs .tab {
+  background-color: transparent !important;
+}
+
+.monaco-list.settings-editor-tree .monaco-list-row {
+  background-color: transparent !important;
+  outline-color: transparent !important;
+}
+
+.extension-editor,
+.monaco-inputbox > .wrapper > .input,
+.monaco-workbench
+  > .part.editor
+  > .content
+  > .one-editor-silo
+  > .container
+  > .title
+  .tabs-container
+  > .tab.active,
+.preferences-editor > .preferences-header,
+.preferences-editor
+  > .preferences-editors-container.side-by-side-preferences-editor
+  .preferences-header-container,
+.monaco-editor,
+.monaco-editor .inputarea.ime-input {
+  background: transparent !important;
+} */
+/* GLASS */
+
 .monaco-editor-hover .monaco-hover {
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.45) !important;
   padding: 10px !important;
