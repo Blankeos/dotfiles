@@ -113,12 +113,12 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   npm install --global pnpm
   ```
 
-- [x] Node - I prefer to install node via nvm.
+- [x] Node - I prefer to install node via fnm (Nvm but built with Rust).
 
   ```sh
-  brew install nvm
-  nvm install 20
-  nvm use 20
+  brew install fnm
+  fnm install 20
+  fnm use 20
   ```
 
 - [x] [Bun](https://bun.sh/docs/installation) - Best js/ts runtime & package manager (for me).
