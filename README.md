@@ -54,10 +54,10 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
 
-- Install [iTerm2](https://iterm2.com/)
+- Install [Wezterm](https://wezfurlong.org/wezterm/)
 
   ```sh
-  brew install iTerm2 # Renders the Nerd Fonts better.
+  brew install wezterm # Renders the Nerd Fonts better + better IDE
   ```
 
 #### 2. Setup Git
