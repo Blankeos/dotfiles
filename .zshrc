@@ -15,7 +15,7 @@ ZSH_THEME="agnoster"
 
 # colors.sh
 NO_FORMAT="\033[0m"
-C_CYAN1="\033[38;5;51m"
+C_CYAN1="\033[38;2;96;165;250m"
 C_GOLD1="\033[38;5;220m"
 C_BROWN="\033[38;5;172m"
 
@@ -32,7 +32,6 @@ echo -e "/\ \_\ \/\ \     /\  ___\/\  __ \/\  == \/\ \    /\  __ \   "
 echo -e "\ \  __ \ \ \    \ \ \___\ \  __ \ \  __<\ \ \___\ \ \/\ \  "
 echo -e " \ \_\ \_\ \_\    \ \_____\ \_\ \_\ \_\ \_\ \_____\ \_____\ "
 echo -e "  \/_/\/_/\/_/     \/_____/\/_/\/_/\/_/ /_/\/_____/\/_____/ "
-echo -e ""
 
 # ==============================================================================
 # OTHER
@@ -134,4 +133,21 @@ eval "$(starship init zsh)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
+# bun completions
+[ -s "/Users/carlo/.bun/_bun" ] && source "/Users/carlo/.bun/_bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+eval "$(fnm env --use-on-cd --shell zsh)"
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/carlo/.dart-cli-completion/zsh-config.zsh ]] && . /Users/carlo/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+# Flutter
+export PATH=$PATH:"$HOME/fvm/default/bin"
