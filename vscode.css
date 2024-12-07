@@ -1,6 +1,16 @@
 * {
-  font-family: "ZedMono Nerd Font";
-  /* font-size: medium; */
+  font-family: "BlexMono Nerd Font";
+
+  // If specific only.
+  /* .sidebar *,
+  .quick-input-widget,
+  .quick-input-list,
+  .auxiliarybar *,
+  .panel *,
+  .tabs *,
+  .statusbar * {
+    font-family: "BlexMono Nerd Font" !important;
+  } */
 }
 
 .monaco-editor-hover .monaco-hover {
