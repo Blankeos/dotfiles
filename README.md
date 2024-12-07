@@ -34,7 +34,9 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
 
 ## 🖥️ MacOS Setup
 
-#### 1. Install
+#### 1. Clone this repo in into `~/dotfiles`. Important for Stow to work
+
+#### 2. Install
 
 - Install [Brew](https://brew.sh/)
 
@@ -57,10 +59,10 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
 - Install [Wezterm](https://wezfurlong.org/wezterm/)
 
   ```sh
-  brew install wezterm # Renders the Nerd Fonts better + better IDE
+  brew install --cask wezterm # Renders the Nerd Fonts better + better IDE
   ```
 
-#### 2. Setup Git
+#### 3. Setup Git
 
 ```sh
 # Install the GitHub CLI
@@ -75,13 +77,12 @@ gh auth switch # switch between logged in accounts.
 gh auth status # check which account is logged in.
 ```
 
-#### 3. Setup Starship
+#### 4. Install Configs (NeoVim, Starship, zshrc)
 
 ```sh
-# 1. Run
-mkdir -p ~/.config && touch ~/.config/starship.toml
-
-# 2. Paste contents of `starship.toml` from here to ~/.config/starship.toml
+brew install stow
+cd ~/dotfiles
+stow . # Now symlinked, you can keep editing and pushing to this repo.
 ```
 
 #### Additional
@@ -94,9 +95,11 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 - [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
 - [x] Better backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
+
   ```sh
   brew install --cask rectangle
   ```
+
 - [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix) - I think it's better than LogiOptions+.
 
   ```sh
@@ -129,9 +132,11 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
   ```
 
 - [x] XZ - Need to install this before installing a pyenv version.
+
   ```sh
   brew install xz
   ```
+
 - [x] Python - I prefer to install python via pyenv.
 
   ```sh
