@@ -131,6 +131,8 @@ eval "$(starship init zsh)"
 # PATHS
 # ==============================================================================
 
+# LazyGit
+export XDG_CONFIG_HOME="$HOME/.config/lazygit.yml"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 # bun completions

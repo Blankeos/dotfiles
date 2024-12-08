@@ -1,0 +1,15 @@
+os:
+  open: "zed {{filename}}"
+  edit: "zed {{filename}}"
+  editAtLine: "zed {{filename}}:{{line}}"
+  editAtLineAndWait: "zed {{filename}}:{{line}} --wait"
+
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
+
+git:
+  log:
+    showGraph: always
+    showWholeGraph: true
