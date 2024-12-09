@@ -132,7 +132,7 @@ eval "$(starship init zsh)"
 # ==============================================================================
 
 # LazyGit
-export XDG_CONFIG_HOME="$HOME/.config/lazygit.yml"
+export XDG_CONFIG_HOME="$HOME/.config"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 # bun completions

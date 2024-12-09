@@ -3,6 +3,7 @@ os:
   edit: "zed {{filename}}"
   editAtLine: "zed {{filename}}:{{line}}"
   editAtLineAndWait: "zed {{filename}}:{{line}} --wait"
+  openDirInEditor: "zed {{filename}}"
 
 gui:
   theme:
