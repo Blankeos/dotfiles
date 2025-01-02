@@ -106,6 +106,11 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install --cask mac-mouse-fix
   ```
 
+- [x] Better LS (Eza)
+  ```sh
+  brew install --cask eza # Then make sure to `alias ls="eza"` in your .zshrc.
+  ```
+
 </details>
 
 <details>
