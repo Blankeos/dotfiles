@@ -71,6 +71,9 @@ brew install gh
 # Login
 gh auth login
 
+# Zed as my default editor (with Git)
+git config --global core.editor "zed -w"
+
 # (Additionally) For work if you have multiple accounts
 gh auth setup-git # Only need to run once
 gh auth switch # switch between logged in accounts.
@@ -95,6 +98,10 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
 - [x] Better backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
+- [x] Go to System Preferences > Keyboard > Text > Edit... >
+
+  - [x] Uncheck - "Correct spelling automatically"
+  - [x] Uncheck - "Capitalize words automatically"
 
   ```sh
   brew install --cask rectangle

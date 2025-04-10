@@ -16,5 +16,6 @@ config.colors = {
 	cursor_bg = "rgba(186, 230, 253, 1)",
 	selection_bg = "rgba(96, 165, 250, 0.4)",
 }
+config.max_fps = 120;
 
 return config
