@@ -96,7 +96,13 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   </summary>
 
 - [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
-- [x] Better backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
+- [x] Better Backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
+- [x] Keyboard accessible Native Dialogs > **Settings** > **Keyboard** > **Keyboard Shortcuts** > ✅ Change the way Tab moves focus. Then press Ctrl + Fn + F7.
+  - Now, "Tab" or "Shift+Tab" will switch between action in Native Dialogs.
+  - "Space" performs the current focused action.
+  - "Enter" is always the primary (blue) action.
+  - "Cmd+." is always cancel.
+  - "Esc" is always cancel.
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
 - [x] Go to System Preferences > Keyboard > Text > Edit... >
 

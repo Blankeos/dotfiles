@@ -154,3 +154,12 @@ eval "$(pyenv init -)"
 
 # Flutter
 export PATH=$PATH:"$HOME/fvm/default/bin"
+
+# SPACETIMEDB
+export PATH="/Users/carlo/.local/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/carlo/.codeium/windsurf/bin:$PATH"
+
+# Dashmon
+export PATH="$PATH":"$HOME/.pub-cache/bin"
