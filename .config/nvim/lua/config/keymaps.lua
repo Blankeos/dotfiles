@@ -42,3 +42,6 @@ keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>j")
+
+-- Format
+keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
