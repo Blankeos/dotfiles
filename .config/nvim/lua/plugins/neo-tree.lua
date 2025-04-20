@@ -10,7 +10,7 @@ return {
       },
     },
     follow_current_file = {
-      enabled = false,
+      enabled = true,
     },
     use_libuv_file_water = true,
   },
