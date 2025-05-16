@@ -62,6 +62,8 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
   brew install --cask wezterm # Renders the Nerd Fonts better + better IDE
   ```
 
+  - I also like to change the App Icon [(Script)](https://github.com/Blankeos/WeztermChangeIconForMac)
+
 #### 3. Setup Git
 
 ```sh
@@ -240,13 +242,17 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   </details>
 
 <details>
-  <summary>⭐️ Cool Stuff</summary>
+  <summary>⭐️ Essential Applications</summary>
 
-- [x] Bruno - API Testing - `brew install --cask bruno`
+- [x] Vivaldi - Favorite browser - `brew install --cask vivaldi`
+  - Most settings are synced with my account. I'll make a webapp to share this in the future.
+  - Make sure to use the `.config/vivald-mod` folder under **Custom UI Modifications**. (VivalArc)
 - [x] Handbrake - Video Converter - `brew install --cask handbrake`
 - [x] Keycastr - Keypress visualzier - `brew install --cask keycastr`
 - [x] Screen Studio - Slick Screen Recorder - `brew install --cask screen-studio`
 - [x] Rotato - Cool mockups - `brew install --cask rotato`
 - [x] Licecap - GIFs - `brew install --cask licecap`
+
+<!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
 </details>
