@@ -8,6 +8,7 @@ $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
 $nodejs\
+$python\
 $rust\
 $golang\
 $php\
@@ -37,6 +38,11 @@ format = '[[ $symbol $branch ](fg:#60a5fa bg:#394260)]($style)'
 style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#60a5fa bg:#394260)]($style)'
 
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($virtualenv) ($version) ](fg:#60a5fa bg:#212736)]($style)'
+
 [nodejs]
 symbol = ""
 style = "bg:#212736"
@@ -59,6 +65,6 @@ format = '[[ $symbol ($version) ](fg:#60a5fa bg:#212736)]($style)'
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
+time_format = "%I:%M %p" # Hour:Minute AM/PM Format
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'

@@ -143,9 +143,9 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -158,8 +158,8 @@ export PATH=$PATH:"$HOME/fvm/default/bin"
 # SPACETIMEDB
 export PATH="/Users/carlo/.local/bin:$PATH"
 
-# Added by Windsurf
-export PATH="/Users/carlo/.codeium/windsurf/bin:$PATH"
-
 # Dashmon
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# deno
+. "/Users/carlo/.deno/env"

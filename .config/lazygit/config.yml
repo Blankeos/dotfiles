@@ -6,6 +6,7 @@ os:
   openDirInEditor: "zed {{filename}}"
 
 gui:
+  switchTabsWithPanelJumpKeys: true
   theme:
     selectedLineBgColor:
       - reverse

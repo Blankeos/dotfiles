@@ -107,7 +107,6 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   - "Esc" is always cancel.
 - [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
 - [x] Go to System Preferences > Keyboard > Text > Edit... >
-
   - [x] Uncheck - "Correct spelling automatically"
   - [x] Uncheck - "Capitalize words automatically"
 
@@ -161,8 +160,9 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
   ```sh
   brew install pyenv
-  pyenv install 3.12
+  pyenv install 3.12 # or any version
   pyenv global 3.12
+  curl -LsSf https://astral.sh/uv/install.sh | sh # Install uv
   ```
 
 - [x] Go - My compiled language for backend services.
@@ -239,6 +239,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   flutter doctor # Check if it's working.
   ```
 
+- [x] OpenCode - Coding agents. Usecases: Coding, quick chatting.
+
+  ```sh
+  brew install opencode
+  ```
+
   </details>
 
 <details>
@@ -246,12 +252,49 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
 - [x] Vivaldi - Favorite browser - `brew install --cask vivaldi`
   - Most settings are synced with my account. I'll make a webapp to share this in the future.
+    - Panels
+      - Right Side
+      - Show Panel Toggle - Remove.
+    - Tabs
+      - New Tab Position - After Active Tab
+      - Tab Stacking: Accordion
+      - Enable 'Show Tab Cycler'
+    - Tab Display
+      - Display Trash Can - Remove.
+      - Display Synced Tabs Button - Remove.
+      - Display Close Boutton On Left Side - Remove.
+    - Address Bar
+      - Show Full Address
+      - Extensions Visibility - Expand Hidden Extensions to Drop-Down Menu
+    - Hotkeys
+      - New Tab - Remove. Set ^ T.
+      - Quick Commands - Set Cmd T.
+      - Pin Tab - Remove Bookmark. Set Cmd D.
+      - Address Bar - Set ^ D.
+      - Copy Selected Text to Note - Remove.
+      - Toggle UI - Opt Cmd C.
+      - Save Page As - Remove.
+      - Tab Bar - Set Cmd S, ^ Cmd S.
+      - Print - Remove. Set ^ P.
+      - Panel - Set Cmd P.
+      - Tab Cycler Back - Remove Cmd Option Left
+      - Tab Cycler Forward - Remove Cmd Option Right
+      - Previous Tab - Add Cmd Option Left
+      - Next Tab - Add Cmd Option Right
+
   - Make sure to use the `.config/vivald-mod` folder under **Custom UI Modifications**. (VivalArc)
+
 - [x] Handbrake - Video Converter - `brew install --cask handbrake`
 - [x] Keycastr - Keypress visualzier - `brew install --cask keycastr`
 - [x] Screen Studio - Slick Screen Recorder - `brew install --cask screen-studio`
 - [x] Rotato - Cool mockups - `brew install --cask rotato`
 - [x] Licecap - GIFs - `brew install --cask licecap`
+- [x] FreeFileSync - Essential workflow for file storage. `brew install --cask freefilesync`
+- [x] Beekeeper Studio - SQL exploration in my GUI. `brew install --cask beekeeper-studio`
+- [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
+- [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
+- [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
+- [x] Paraspeech - https://paraspeech.com (I have a license)
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
