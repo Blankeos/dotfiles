@@ -45,3 +45,16 @@ keymap.set("n", "sl", "<C-w>j")
 
 -- Format
 keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+
+-- Better Shift A and I when visual select mode (Like in Zed)
+local function visual_end_insert()
+  vim.cmd("normal! l")
+  vim.cmd("normal! o")
+  vim.cmd("startinsert")
+end
+local function visual_start_insert()
+  vim.cmd("normal! o")
+  vim.cmd("startinsert")
+end
+vim.keymap.set("v", "<S-I>", visual_start_insert, { desc = "Insert at start of visual selection" })
+vim.keymap.set("v", "<S-A>", visual_end_insert, { desc = "Insert at end of visual selection" })

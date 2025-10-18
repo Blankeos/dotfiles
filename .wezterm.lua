@@ -1,12 +1,11 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
 config.font = wezterm.font("BlexMono Nerd Font")
 config.font_size = 13
 
+config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
 config.window_background_opacity = 0.8
@@ -16,6 +15,6 @@ config.colors = {
 	cursor_bg = "rgba(186, 230, 253, 1)",
 	selection_bg = "rgba(96, 165, 250, 0.4)",
 }
-config.max_fps = 120;
+config.max_fps = 120
 
 return config
