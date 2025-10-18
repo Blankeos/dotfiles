@@ -126,11 +126,14 @@ eval "$(starship init zsh)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="eza"
+alias ls="eza --icons=always"
 
 # ==============================================================================
-# PATHS
+# Paths and Plugins
 # ==============================================================================
+
+# For zsh autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # LazyGit
 export XDG_CONFIG_HOME="$HOME/.config"

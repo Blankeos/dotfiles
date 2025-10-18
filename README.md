@@ -54,6 +54,9 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
 
   ```sh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  # Some enhancements I use
+  brew install zsh-autosuggestions
   ```
 
 - Install [Wezterm](https://wezfurlong.org/wezterm/)
@@ -97,32 +100,51 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
     ⭐️ MacOS Improvements
   </summary>
 
-- [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key.
-- [x] Better Backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+
+- [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key. (Less used, just use Wezterm)
+- [x] Better Backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+ (Less used, just use Wezterm)
 - [x] Keyboard accessible Native Dialogs > **Settings** > **Keyboard** > **Keyboard Shortcuts** > ✅ Change the way Tab moves focus. Then press Ctrl + Fn + F7.
   - Now, "Tab" or "Shift+Tab" will switch between action in Native Dialogs.
   - "Space" performs the current focused action.
   - "Enter" is always the primary (blue) action.
   - "Cmd+." is always cancel.
   - "Esc" is always cancel.
-- [x] Install [Rectangle](https://rectangleapp.com/) - For window management (Choose the 'Rectangle' keybind setting).
-- [x] Go to System Preferences > Keyboard > Text > Edit... >
-  - [x] Uncheck - "Correct spelling automatically"
-  - [x] Uncheck - "Capitalize words automatically"
+
+- [x] Better Window management Install [Rectangle](https://rectangleapp.com/) - For window management
 
   ```sh
   brew install --cask rectangle
   ```
 
+- [x] Better Spotlight. Install [Raycast](http://raycast.com)
+
+  ```sh
+  brew install --cask raycast
+  ```
+
+  - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight > Show Spotlight Search (off)
+
+- [x] Better Alt+Tab Window Switching. Install [rmcd](https://lowtechguys.com/rcmd/)
+
+- [x] Go to System Settings > Keyboard > Text > Edit... >
+- [x] Uncheck - "Correct spelling automatically"
+- [x] Uncheck - "Capitalize words automatically"
+
 - [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix) - I think it's better than LogiOptions+.
+
+- [x] Finder Tips to help find large files
+  - Check Finder > Settings > Hard disks ✅
+  - Do this for some folders only (Start with Macintosh HD): Cmd+J (or View > Show View Options) > Calculate all sizes ✅
 
   ```sh
   brew install --cask mac-mouse-fix
   ```
 
 - [x] Better LS (Eza)
+
   ```sh
   brew install --cask eza # Then make sure to `alias ls="eza"` in your .zshrc.
+  # Can now do stuff like
+  ls -T # tree, etc.
   ```
 
 </details>
@@ -245,7 +267,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install opencode
   ```
 
-  </details>
+- [x] Beekeeper Studio - SQL exploration in my GUI. `brew install --cask beekeeper-studio`
+- [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
+- [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
+- [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
+
+</details>
 
 <details>
   <summary>⭐️ Essential Applications</summary>
@@ -290,11 +317,10 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Rotato - Cool mockups - `brew install --cask rotato`
 - [x] Licecap - GIFs - `brew install --cask licecap`
 - [x] FreeFileSync - Essential workflow for file storage. `brew install --cask freefilesync`
-- [x] Beekeeper Studio - SQL exploration in my GUI. `brew install --cask beekeeper-studio`
-- [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
-- [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
-- [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
 - [x] Paraspeech - https://paraspeech.com (I have a license)
+- [x] Notion - `brew install --cask notion`
+- [x] Shottr - `brew install --caks shottr` (best screenshot app)
+- [ ] Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
