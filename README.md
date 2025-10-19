@@ -187,12 +187,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install xz
   ```
 
-- [x] Python - I prefer to install python via pyenv.
+- [x] Python - I prefer to install python via uv
 
   ```sh
-  brew install pyenv
-  pyenv install 3.12 # or any version
-  pyenv global 3.12
+  # brew install pyenv # (NOT NEEDED ANYMORE)
+  # pyenv install 3.12 # or any version
+  # pyenv global 3.12
   curl -LsSf https://astral.sh/uv/install.sh | sh # Install uv
   ```
 
