@@ -126,7 +126,14 @@ eval "$(starship init zsh)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Better ls
 alias ls="eza --icons=always"
+
+# Better cd
+eval "$(zoxide init zsh)"
+alias cd="z"
+alias cdi="zi"
 
 # ==============================================================================
 # Paths and Plugins

@@ -59,6 +59,23 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
   brew install zsh-autosuggestions
   ```
 
+- [x] Better LS (Eza)
+
+  ```sh
+  brew install --cask eza # Then make sure to `alias ls="eza"` in your .zshrc.
+  # Can now do stuff like
+  ls -T # tree, etc.
+  ```
+
+- [x] Smarter cd (Zoxide)
+
+  ```sh
+  brew install --cask zoxide # Then make sure to `alias cd="z"` and `alias cdi="zi" in your .zshrc.
+  cdi # If you want to easily search what you visit like fzf
+  cd projects # Jumps to ~/Desktop/Projects very easily, if you've visited it already
+  zoxide edit # To delete saved stuff
+  ```
+
 - Install [Wezterm](https://wezfurlong.org/wezterm/)
 
   ```sh
@@ -137,14 +154,6 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
   ```sh
   brew install --cask mac-mouse-fix
-  ```
-
-- [x] Better LS (Eza)
-
-  ```sh
-  brew install --cask eza # Then make sure to `alias ls="eza"` in your .zshrc.
-  # Can now do stuff like
-  ls -T # tree, etc.
   ```
 
 </details>
