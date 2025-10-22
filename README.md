@@ -71,8 +71,8 @@ My favorite font is **Zed Mono** and **BlexMono Nerd Font** ⚡️ (The ones tha
 
   ```sh
   brew install --cask zoxide # Then make sure to `alias cd="z"` and `alias cdi="zi" in your .zshrc.
-  cdi # If you want to easily search what you visit like fzf
   cd projects # Jumps to ~/Desktop/Projects very easily, if you've visited it already
+  zi # If you want interactive search
   zoxide edit # To delete saved stuff
   ```
 
@@ -136,11 +136,21 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
   ```sh
   brew install --cask raycast
+  # Advanced > Hyper Key > Capslock ✦
+  # Extensions: Unicode Symbols Search (Install from store)
+  # Extensions > Add the following...
+  #   - ✦ 1 - Zed
+  #   - ✦ 2 - WezTerm
+  #   - ✦ 3 - Vivaldi
+  #   - ✦ 4 - Spotify
+  #   - ✦ F - Finder
+  #   - ✦ N - Notion
+  #   - ✦ D - Notion
+  #   - ✦ S - Slack
+  #   - ✦ M - Messenger
   ```
 
   - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight > Show Spotlight Search (off)
-
-- [x] Better Alt+Tab Window Switching. Install [rmcd](https://lowtechguys.com/rcmd/)
 
 - [x] Go to System Settings > Keyboard > Text > Edit... >
 - [x] Uncheck - "Correct spelling automatically"

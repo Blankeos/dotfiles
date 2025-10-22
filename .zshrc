@@ -133,7 +133,6 @@ alias ls="eza --icons=always"
 # Better cd
 eval "$(zoxide init zsh)"
 alias cd="z"
-alias cdi="zi"
 
 # ==============================================================================
 # Paths and Plugins
