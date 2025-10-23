@@ -334,7 +334,11 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
       - Previous Tab - Add `⌘⌥←`
       - Next Tab - Add `⌘⌥→`
 
-  - Make sure to use the set [`.config/vivald-mod`] folder under **Custom UI Modifications**. (VivalArc)
+      - Custom Quick Commands - just useful Arc-like splitting features, making it easier to use. Use the exact names so they're easier to search in `⌘T`. Unfortunately, it requires clicks for selection first.
+        - `usplit - Unsplit/Until Current Tabs` - Untile All Tabs in Set
+        - `csplit - Split/Tile in Flex Column` - Tile Horizontally
+        - `rsplit - Split/Tile in Flex Row` - Tile Vertically
+        - `gsplit - Split/Tile in Flex Row` - Tile To Grid
 
 - [x] Handbrake - Video Converter - `brew install --cask handbrake`
 - [x] Keycastr - Keypress visualzier - `brew install --cask keycastr`
