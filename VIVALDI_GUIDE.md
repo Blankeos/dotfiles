@@ -7,7 +7,7 @@ Most settings are synced with my account. Since there is zero concept of a "seri
 > Symbol meanings: ☑️ Uncheck | ✅ Check
 
 - **Themes** > I use [Arc Dark Pure](https://themes.vivaldi.net/themes/NOb71LX8J1g), but overrode the highlight to `#2b7fff`
-- Go to `vivaldi:flags` > Allow CSS Modifications - Enabled.
+- Type in the URL bar: `vivaldi:flags` > Allow CSS Modifications - Enabled.
 - **Appearance** > Custom UI Modifications (This is now visible)
   - Select the folder I have in this repo `.config/vivald-mod`
   - That folder contains what I got from either vivalarc-6.9, etc. [(Here)](https://github.com/tovifun/VivalArc/tree/main).
