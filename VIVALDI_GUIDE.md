@@ -17,6 +17,7 @@ Most settings are synced with my account. Since there is zero concept of a "seri
 - Tabs
   - **New Tab Position** - After Active Tab - ✅
   - **Tab Features > Tab Stacking** > Accordion - ✅
+  - **Tab Features > Tab Stack Options** > Allow Stacking by Drag and Drop ☑️ (Much pleasant to do it by command)
   - **Tab Features** > Show Tab Cycler - ✅
   - **Tab Display** > Display Close Button > On Left Side - ☑️ (Because it hides the favicon)
   - **Tab Display** > Display Trashed Can - ☑️ (Might not exist anymore)
