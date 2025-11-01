@@ -125,6 +125,10 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   - "Enter" is always the primary (blue) action.
   - "Cmd+." is always cancel.
   - "Esc" is always cancel.
+- [x] Quick Note: If you're uninstalling with `brew uninstall`. Checklist for making sure it's a clean uninstall:
+  - Check `~/Library/LaunchAgents` and `/Library/LaunchDaemons` for leftover launchd plists
+  - Check `~/Library/Application Support/<package>` for leftover configs
+  - Check `~/Library/Preferences/<package>.plist` for leftover preferences
 
 - [x] Better Window management Install [Rectangle](https://rectangleapp.com/) - For window management
 
