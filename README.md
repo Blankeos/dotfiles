@@ -290,6 +290,13 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install opencode
   ```
 
+- [x] Lazygit - my usual git workflow, works anywhere.
+
+  ```sh
+  brew install lazygit
+  brew install git-delta # Better pager for lazygit (it's in my config)
+  ```
+
 - [x] Beekeeper Studio - SQL exploration in my GUI. `brew install --cask beekeeper-studio`
 - [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
 - [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
