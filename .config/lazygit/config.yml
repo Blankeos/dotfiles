@@ -4,13 +4,11 @@ os:
   editAtLine: "zed {{filename}}:{{line}}"
   editAtLineAndWait: "zed {{filename}}:{{line}} --wait"
   openDirInEditor: "zed {{filename}}"
-
 gui:
   switchTabsWithPanelJumpKeys: true
   theme:
     selectedLineBgColor:
       - reverse
-
 git:
   log:
     showGraph: always
@@ -18,3 +16,47 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never --syntax-theme base16-256 -s
+customCommands:
+  - key: "G"
+    command: "gh pr view -w {{.SelectedLocalBranch.Name}} || gh repo view -w"
+    context: "localBranches"
+    description: "Open Github PR in browser"
+  - key: "G"
+    command: "gh pr view -w || gh repo view -w"
+    context: "commits,files"
+    description: "Open Github PR in browser"
+  - key: "H"
+    command: "gh repo view -w"
+    context: localBranches,commits,files
+    description: "Open Github Repo in Browser"
+  - key: "Y"
+    description: "Custom copy: old content"
+    commandMenu:
+      - key: "o"
+        command: "git show HEAD:{{.SelectedFile.Name}} | pbcopy"
+        context: "files"
+        description: "Old file content (HEAD) (left diff)"
+
+      - key: "o"
+        command: "git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} | pbcopy"
+        context: "commitFiles"
+        description: "Copy old file content (left diff)"
+      - key: "c"
+        command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} | pbcopy"
+        context: "commitFiles"
+        description: "Copy file content from this commit (right diff)"
+  - key: "O"
+    description: "Custom open: git show to temp and zed"
+    commandMenu:
+      - key: "o"
+        command: "git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --wait /tmp/lazy_{{.SelectedCommitFile.Name}}"
+        context: "commitFiles"
+        description: "Open old file content in zed (left diff)"
+      - key: "c"
+        command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --wait /tmp/lazy_{{.SelectedCommitFile.Name}}"
+        context: "commitFiles"
+        description: "Open file content from this commit in zed (right diff)"
+      - key: "h"
+        command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --diff /tmp/lazy_{{.SelectedCommitFile.Name}} {{.SelectedCommitFile.Name}}"
+        context: "commitFiles"
+        description: "Compare file content with HEAD in zed (Note: only works if same name)"
