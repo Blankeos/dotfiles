@@ -36,7 +36,6 @@ customCommands:
         command: "git show HEAD:{{.SelectedFile.Name}} | pbcopy"
         context: "files"
         description: "Old file content (HEAD) (left diff)"
-
       - key: "o"
         command: "git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} | pbcopy"
         context: "commitFiles"
@@ -49,14 +48,35 @@ customCommands:
     description: "Custom open: git show to temp and zed"
     commandMenu:
       - key: "o"
-        command: "git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --wait /tmp/lazy_{{.SelectedCommitFile.Name}}"
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show HEAD:{{.SelectedFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+        context: "files"
+        description: "Open old file content in zed (HEAD) (left diff)"
+      - key: "o"
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
         context: "commitFiles"
         description: "Open old file content in zed (left diff)"
       - key: "c"
-        command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --wait /tmp/lazy_{{.SelectedCommitFile.Name}}"
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
         context: "commitFiles"
         description: "Open file content from this commit in zed (right diff)"
       - key: "h"
-        command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > /tmp/lazy_{{.SelectedCommitFile.Name}} && zed --diff /tmp/lazy_{{.SelectedCommitFile.Name}} {{.SelectedCommitFile.Name}}"
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --diff "$open_dest" "{{.SelectedCommitFile.Name}}"'
         context: "commitFiles"
         description: "Compare file content with HEAD in zed (Note: only works if same name)"
+      # With sample with and suggestions
+      # - key: "<c-p>"
+      #   description: "Pull from a specific remote repository"
+      #   context: "files"
+      #   loadingText: "Pulling ..."
+      #   command: git pull {{ .Form.Remote }} {{ .Form.RemoteBranch }}
+      #   prompts:
+      #     - type: "input"
+      #       key: "Remote"
+      #       title: "Remote:"
+      #       suggestions:
+      #         preset: "remotes"
+      #     - type: "input"
+      #       key: "RemoteBranch"
+      #       title: "Remote branch:"
+      #       suggestions:
+      #         command: "git branch --remote --list '{{.Form.Remote}}/*' --format='%(refname:short)' | sed 's/{{.Form.Remote}}\\///'"
