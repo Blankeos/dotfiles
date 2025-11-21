@@ -16,10 +16,24 @@ config.colors = {
 }
 config.max_fps = 120
 
--- TMux Style
-
 config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
+    -- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
+    {
+        key = 'LeftArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendKey {
+            key = 'b',
+            mods = 'ALT',
+        },
+    },
+    {
+        key = 'RightArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
+    },
+
+    -- TMux Style
     {
         mods = "LEADER",
         key = "c",
