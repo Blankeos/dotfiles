@@ -140,9 +140,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
   ```sh
   brew install --cask raycast
+
   # Advanced > Hyper Key > Capslock ✦
-  # Extensions: Unicode Symbols Search (Install from store)
-  # Extensions > Add the following...
+  # Extensions via [Install from store] (no list to see them, so just refer here):
+  #    - Unicode Symbols Search
+  #    - Color Picker
+  # Extensions > Add these hotkeys...
   #   - ✦ 1 - Zed
   #   - ✦ 2 - WezTerm
   #   - ✦ 3 - Vivaldi
@@ -155,6 +158,8 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   ```
 
   - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight > Show Spotlight Search (off)
+  - Add `vivaldi://apps` directory as indexable by Raycast:
+    - Extensions > [+] > Add Application Directory > ⌘ Shift G > `~/Applications/Vivaldi Apps`
 
 - [x] Go to System Settings > Keyboard > Text > Edit... >
 - [x] Uncheck - "Correct spelling automatically"
