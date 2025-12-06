@@ -44,6 +44,14 @@ customCommands:
         command: "git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} | pbcopy"
         context: "commitFiles"
         description: "Copy file content from this commit (right diff)"
+      - key: "p"
+        command: "(gh pr view {{.SelectedLocalBranch.Name}} --json permalink -q .permalink || gh repo view --json url -q .url) | pbcopy"
+        context: "localBranches"
+        description: "Copy PR link (or repo link if no PR)"
+      - key: "r"
+        command: 'REPO_URL=$(gh repo view --json url -q .url) && echo "${REPO_URL}/compare/{{.SelectedLocalBranch.Name}}?expand=1" | pbcopy'
+        context: "localBranches"
+        description: "Copy PR creation URL for selected branch"
   - key: "O"
     description: "Custom open: git show to temp and zed"
     commandMenu:
