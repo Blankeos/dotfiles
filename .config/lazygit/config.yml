@@ -45,7 +45,7 @@ customCommands:
         context: "commitFiles"
         description: "Copy file content from this commit (right diff)"
       - key: "p"
-        command: "gh pr view {{.SelectedLocalBranch.Name}} --json permalink -q .permalink | pbcopy"
+        command: "gh pr view {{.SelectedLocalBranch.Name}} --json url -q .url | pbcopy"
         context: "localBranches"
         description: "Copy PR link"
       - key: "G"
