@@ -325,6 +325,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Notion - `brew install --cask notion`
 - [x] Shottr - `brew install --caks shottr` (best screenshot app)
 - [ ] Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)
+- [x] Tuitube - `curl -sf https://termcast.app/r/tuitube | bash` + `brew install yt-dlp ffmpeg`
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 

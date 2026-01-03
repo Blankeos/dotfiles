@@ -181,3 +181,6 @@ export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PA
 export PATH=/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
 # or
 export PATH=/usr/local/lib/ruby/bin:/usr/local/lib/ruby/gems/3.3.0/bin:$PATH
+
+# tuitube
+export PATH=/Users/carlo/.termcast/compiled/tuitube/bin:$PATH
