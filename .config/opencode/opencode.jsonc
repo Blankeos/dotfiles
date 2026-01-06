@@ -15,4 +15,11 @@
     //   },
     // },
   },
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": ["bunx", "@playwright/mcp@latest"],
+      "enabled": true,
+    },
+  },
 }
