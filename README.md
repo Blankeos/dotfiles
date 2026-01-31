@@ -145,6 +145,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   # Extensions via [Install from store] (no list to see them, so just refer here):
   #    - Unicode Symbols Search
   #    - Color Picker
+  #    - Unix Timestamp
   # Extensions > Add these hotkeys...
   #   - ✦ 1 - Zed
   #   - ✦ 2 - WezTerm
