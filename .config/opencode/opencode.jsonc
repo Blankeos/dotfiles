@@ -1,25 +1,49 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "ayu",
-  "plugin": ["opencode-gemini-auth"],
+  // "plugin": ["opencode-gemini-auth", "@mohak34/opencode-notifier@latest"],
+  "plugin": ["@mohak34/opencode-notifier@latest"],
   "provider": {
-    // "ollama": {
-    //   "npm": "@ai-sdk/openai-compatible",
-    //   "name": "Ollama Cloud",
-    //   "options": {
-    //     "baseURL": "https://ollama.com/v1",
-    //     "apiKey": "{env:OLLAMA_API_KEY}",
-    //   },
-    //   "models": {
-    //     "glm-4.6": { "name": "GLM 4.6" },
-    //   },
-    // },
-  },
-  "mcp": {
-    "playwright": {
-      "type": "local",
-      "command": ["bunx", "@playwright/mcp@latest"],
-      "enabled": false,
+    "nano-gpt": {
+      //   // "npm": "@ai-sdk/openai-compatible",
+      //   // "name": "NanoGPT",
+      //   // "options": {
+      //   //   "baseURL": "https://nano-gpt.com/api/v1",
+      //   //   "apiKey": "{env:NANO_GPT_API_KEY}",
+      //   // },
+      "models": {
+        "z-ai/glm-4.6v": { "name": "GLM 4.6V" },
+        "zai-org/glm-4.7-flash-original": { "name": "GLM 4.7 Flash Original" },
+      },
     },
   },
+  "command": {
+    "codereview": {
+      "template": "Review the code changes and provide a X/5 rating on how confident you are in merging this PR.\nAnalyze the code quality, potential bugs, security issues, and overall maintainability.",
+      "description": "Review code and give confidence rating",
+    },
+  },
+  "tui": {
+    "scroll_acceleration": { "enabled": true },
+  },
+  "mcp": {
+    // Commented because I just use agent-browser (By Vercel)
+    // "playwright": {
+    //   "type": "local",
+    //   "command": ["bunx", "@playwright/mcp@latest"],
+    //   "enabled": false,
+    // },
+  },
+  // "agent": {
+  //   "vision-analyze": {
+  //     "description": "Vision Analyzer subagent to provide additional context on the image for non VLM models",
+  //     "mode": "subagent",
+  //     "model": "chutes/zai-org/GLM-4.6V",
+  //     "prompt": "You are an image analyzer, you will scan the provided image based on additional instructions:",
+  //     "tools": {
+  //       "write": false,
+  //       "edit": false,
+  //     },
+  //   },
+  // },
 }
