@@ -136,6 +136,8 @@ alias cd="z"
 
 alias lg="lazygit"
 
+alias oc="opencode"
+
 # ==============================================================================
 # Paths and Plugins
 # ==============================================================================
@@ -184,3 +186,10 @@ export PATH=/usr/local/lib/ruby/bin:/usr/local/lib/ruby/gems/3.3.0/bin:$PATH
 
 # tuitube
 export PATH=/Users/carlo/.termcast/compiled/tuitube/bin:$PATH
+
+# Valdi configuration begin
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export ANDROID_HOME="$HOME/.valdi/android_home"
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
+# Valdi configuration end
