@@ -33,6 +33,15 @@
     //   "command": ["bunx", "@playwright/mcp@latest"],
     //   "enabled": false,
     // },
+    "tavily": {
+      "type": "remote",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={env:TAVILY_API_KEY}",
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:TAVILY_API_KEY}",
+      },
+      "enabled": true,
+    },
   },
   // "agent": {
   //   "vision-analyze": {

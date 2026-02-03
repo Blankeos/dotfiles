@@ -1,7 +1,7 @@
 {
   "notification": false,
   "events": {
-    "permission": { "sound": false },
+    "permission": { "sound": true },
     "complete": { "sound": true },
     "subagent_complete": { "sound": false },
     "error": { "sound": false },
@@ -9,6 +9,7 @@
   },
   "sounds": {
     "complete": "/Users/carlo/dotfiles/.config/opencode/plugin/pokeding.wav",
-    "question": "/Users/carlo/dotfiles/.config/opencode/plugin/nintendolaunch.mp3"
+    "question": "/Users/carlo/dotfiles/.config/opencode/plugin/nintendolaunch.mp3",
+    "permission": "/Users/carlo/dotfiles/.config/opencode/plugin/nintendolaunch.mp3"
   }
 }
