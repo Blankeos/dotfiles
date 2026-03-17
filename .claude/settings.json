@@ -1,4 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(bunx tsc:*)",
+      "Bash(bunx run:*)"
+    ]
+  },
   "hooks": {
     "Notification": [
       {
