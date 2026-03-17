@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/nintendolaunch.mp3 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/pokeding.wav 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
