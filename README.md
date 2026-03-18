@@ -296,6 +296,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install opencode
   ```
 
+- [x] mprocs - TUI for running multiple commands in parallel. Used by `uptools` alias (it's just cool).
+
+  ```sh
+  brew install mprocs
+  ```
+
 - [x] Lazygit - my usual git workflow, works anywhere.
 
   ```sh

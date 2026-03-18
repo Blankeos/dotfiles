@@ -138,6 +138,8 @@ alias lg="lazygit"
 
 alias oc="opencode"
 
+alias uptools="$HOME/dotfiles/scripts/update-tools.sh"
+
 # ==============================================================================
 # Paths and Plugins
 # ==============================================================================
@@ -193,3 +195,4 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 export ANDROID_HOME="$HOME/.valdi/android_home"
 export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
 # Valdi configuration end
+# export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
