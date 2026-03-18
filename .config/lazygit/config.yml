@@ -13,9 +13,9 @@ git:
   log:
     showGraph: always
     showWholeGraph: true
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --syntax-theme base16-256 -s
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --syntax-theme base16-256 -s
 customCommands:
   - key: "G"
     command: "gh pr view -w {{.SelectedLocalBranch.Name}} || gh repo view -w"
@@ -74,20 +74,20 @@ customCommands:
         command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --diff "$open_dest" "{{.SelectedCommitFile.Name}}"'
         context: "commitFiles"
         description: "Compare file content with HEAD in zed (Note: only works if same name)"
-      # With sample with and suggestions
-      # - key: "<c-p>"
-      #   description: "Pull from a specific remote repository"
-      #   context: "files"
-      #   loadingText: "Pulling ..."
-      #   command: git pull {{ .Form.Remote }} {{ .Form.RemoteBranch }}
-      #   prompts:
-      #     - type: "input"
-      #       key: "Remote"
-      #       title: "Remote:"
-      #       suggestions:
-      #         preset: "remotes"
-      #     - type: "input"
-      #       key: "RemoteBranch"
-      #       title: "Remote branch:"
-      #       suggestions:
-      #         command: "git branch --remote --list '{{.Form.Remote}}/*' --format='%(refname:short)' | sed 's/{{.Form.Remote}}\\///'"
+    # With sample with and suggestions
+    # - key: "<c-p>"
+    #   description: "Pull from a specific remote repository"
+    #   context: "files"
+    #   loadingText: "Pulling ..."
+    #   command: git pull {{ .Form.Remote }} {{ .Form.RemoteBranch }}
+    #   prompts:
+    #     - type: "input"
+    #       key: "Remote"
+    #       title: "Remote:"
+    #       suggestions:
+    #         preset: "remotes"
+    #     - type: "input"
+    #       key: "RemoteBranch"
+    #       title: "Remote branch:"
+    #       suggestions:
+    #         command: "git branch --remote --list '{{.Form.Remote}}/*' --format='%(refname:short)' | sed 's/{{.Form.Remote}}\\///'"
