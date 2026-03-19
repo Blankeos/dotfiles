@@ -138,6 +138,8 @@ alias lg="lazygit"
 
 alias oc="opencode"
 
+alias claude="claude --permission-mode acceptEdits"
+
 alias uptools="$HOME/dotfiles/scripts/update-tools.sh"
 
 # ==============================================================================
