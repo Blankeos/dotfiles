@@ -7,4 +7,5 @@ mprocs \
   "brew upgrade sst/tap/opencode" \
   "rustup upgrade" \
   "bun upgrade" \
-  "claude upgrade"
+  "claude upgrade" \
+  "brew upgrade lazygit"

@@ -10,6 +10,8 @@ gui:
     selectedLineBgColor:
       - reverse
 git:
+  commit:
+    aiGenerateCommand: "claude -p 'Generate a conventional commit message for this diff:'"
   log:
     showGraph: always
     showWholeGraph: true
