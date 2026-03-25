@@ -11,7 +11,7 @@ gui:
       - reverse
 git:
   commit:
-    aiGenerateCommand: "claude -p 'Generate a conventional commit message for this diff:'"
+    generateCommand: "claude -p 'Generate a conventional commit message for this diff:' --no-session-persistence --model haiku"
   log:
     showGraph: always
     showWholeGraph: true
