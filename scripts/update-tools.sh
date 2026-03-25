@@ -8,4 +8,5 @@ mprocs \
   "rustup upgrade" \
   "bun upgrade" \
   "claude upgrade" \
-  "brew upgrade lazygit"
+  "brew upgrade lazygit" \
+  "cargo binstall --no-confirm lazygitrs"
