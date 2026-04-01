@@ -9,4 +9,5 @@ mprocs \
   "bun upgrade" \
   "claude upgrade" \
   "brew upgrade lazygit" \
-  "cargo binstall --no-confirm lazygitrs"
+  "cargo binstall --no-confirm lazygitrs" \
+  "cargo binstall --no-confirm iconmate"

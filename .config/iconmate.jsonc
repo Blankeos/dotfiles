@@ -1,0 +1,4 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Blankeos/iconmate/refs/heads/main/iconmateglobal.schema.json",
+  "svg_view_cmd": "zed %filename%",
+}
