@@ -1,8 +1,8 @@
 os:
   open: "zed {{filename}}"
   edit: "zed {{filename}}"
-  editAtLine: "zed {{filename}}:{{line}}"
-  editAtLineAndWait: "zed {{filename}}:{{line}} --wait"
+  editAtLine: "zed {{filename}}:{{line}}:{{column}}"
+  editAtLineAndWait: "zed {{filename}}:{{line}}:{{column}} --wait"
   openDirInEditor: "zed {{filename}}"
 gui:
   switchTabsWithPanelJumpKeys: true
