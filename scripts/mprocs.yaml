@@ -1,0 +1,17 @@
+procs:
+  uv:
+    shell: uv self update
+  opencode:
+    shell: brew upgrade sst/tap/opencode
+  rustup:
+    shell: rustup upgrade
+  bun:
+    shell: bun upgrade
+  claude:
+    shell: claude upgrade
+  lazygit:
+    shell: brew upgrade lazygit
+  lazygitrs:
+    shell: cargo binstall --no-confirm lazygitrs
+  iconmate:
+    shell: cargo binstall --no-confirm iconmate
