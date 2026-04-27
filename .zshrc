@@ -199,3 +199,6 @@ export ANDROID_HOME="$HOME/.valdi/android_home"
 export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
 # Valdi configuration end
 # export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# libpq (hook pg_dump) or just do `brew link libpq`
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

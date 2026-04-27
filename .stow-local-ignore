@@ -2,3 +2,6 @@ fonts/*
 vscode-settings.jsonc
 ./nvim
 mprocs.log
+scripts/*
+README.md
+VIVALDI_GUIDE.md

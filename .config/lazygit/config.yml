@@ -11,7 +11,8 @@ gui:
       - reverse
 git:
   commit:
-    generateCommand: "claude -p 'Generate a conventional commit message for this diff:' --no-session-persistence --model claude-haiku-4-5"
+    generateCommand: "claude -p 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model claude-haiku-4-5"
+    # generateCommand: "opencode run --model ollama-cloud/kimi-k2.6:cloud 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.'"
   log:
     showGraph: always
     showWholeGraph: true

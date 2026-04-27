@@ -302,6 +302,14 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   brew install mprocs
   ```
 
+- [x] libpq - So you can do pg_dump easily.
+
+  ```sh
+  brew install libpq
+  # Generally because it's a keg-only formula so it doesn't conflict w/ existing Postgres installations, but I usually dont anyway.
+  brew link --force libpq # also... `brew unlink libpq` to undo this btw.
+  ```
+
 - [x] Lazygit - my usual git workflow, works anywhere.
 
   ```sh
@@ -330,9 +338,10 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] FreeFileSync - Essential workflow for file storage. `brew install --cask freefilesync`
 - [x] Paraspeech - https://paraspeech.com (I have a license)
 - [x] Notion - `brew install --cask notion`
-- [x] Shottr - `brew install --caks shottr` (best screenshot app)
-- [ ] Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)
 - [x] Tuitube - `curl -sf https://termcast.app/r/tuitube | bash` + `brew install yt-dlp ffmpeg`
+- [x] Recordly - recordly.dev
+- [ ] Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)
+- [ ] Shottr - `brew install --caks shottr` (best screenshot app) - starting to use less.
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
