@@ -11,6 +11,8 @@ procs:
     shell: claude upgrade
   lazygit:
     shell: brew upgrade lazygit
+  ohmyzsh:
+    shell: zsh -ic 'omz update'
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
   iconmate:

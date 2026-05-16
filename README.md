@@ -313,6 +313,10 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Lazygit - my usual git workflow, works anywhere.
 
   ```sh
+  # I recommend using my own version of lazygit
+  npm install -g lazygitrs
+
+  # old:
   brew install lazygit
   brew install git-delta # Better pager for lazygit (it's in my config)
   ```
@@ -340,8 +344,9 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Notion - `brew install --cask notion`
 - [x] Tuitube - `curl -sf https://termcast.app/r/tuitube | bash` + `brew install yt-dlp ffmpeg`
 - [x] Recordly - recordly.dev
-- [ ] Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)
-- [ ] Shottr - `brew install --caks shottr` (best screenshot app) - starting to use less.
+- [x] Kondor - Install from [kondor](https://github.com/blankeos/kondor) w/ cargo install. Easy storage clearance for devs (I forked it).
+- [ ] ~Shottr - `brew install --caks shottr` (best screenshot app) - starting to use less.~
+- [ ] ~Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)~
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
