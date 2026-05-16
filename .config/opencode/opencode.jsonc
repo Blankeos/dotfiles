@@ -21,12 +21,6 @@
       },
     },
   },
-  "command": {
-    "codereview": {
-      "template": "Review the code changes and provide a X/5 rating on how confident you are in merging this PR.\nAnalyze the code quality, potential bugs, security issues, and overall maintainability.",
-      "description": "Review code and give confidence rating",
-    },
-  },
   "mcp": {
     // Commented because I just use agent-browser (By Vercel)
     // "playwright": {
@@ -45,23 +39,16 @@
     // },
   },
   "agent": {
-    "frontend-dev": {
+    "vlm-agent": {
       "mode": "subagent",
-      "description": "Frontend dev subagent that can do UI the best.",
-      "model": "ollama-cloud/kimi-k2.5",
-      "prompt": "You are an expert frontend developer specializing in modern UI/UX design.",
+      "description": "For non-vision models to analyze images. Before calling this agent, ALWAYS run extract_images tool first to save session images to /tmp/opencode-images/ then pass the resulting file paths in your prompt so this agent can read them.",
+      // "model": "fireworks-ai/accounts/fireworks/models/kimi-k2p5",
+      "model": "opencode-go/kimi-k2.6",
+      "prompt": "You are an expert frontend developer specializing in modern UI/UX design and a skilled image analyst. Do not install any other library, just use your vision capability. You can either analyze provided images to describe their content, layout, and visual details, or perform frontend development tasks based on those descriptions or direct instructions.",
+      "permission": {
+        "read": { "/tmp/opencode-images/*": "allow" },
+        "write": { "/tmp/opencode-images/*": "allow" },
+      },
     },
   },
-  // "agent": {
-  //   "vision-analyze": {
-  //     "description": "Vision Analyzer subagent to provide additional context on the image for non VLM models",
-  //     "mode": "subagent",
-  //     "model": "chutes/zai-org/GLM-4.6V",
-  //     "prompt": "You are an image analyzer, you will scan the provided image based on additional instructions:",
-  //     "tools": {
-  //       "write": false,
-  //       "edit": false,
-  //     },
-  //   },
-  // },
 }
