@@ -19,11 +19,6 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 -- keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
---Switching Buffers Cmd + Option + Arrow - switches buffers
-keymap.set("n", "<A-Left>", ":bprevious<CR>", opts)
-keymap.set("n", "<A-Right>", ":bnext<CR>", opts)
-keymap.set("n", "<A-w>", ":bd<CR>", opts)
-
 -- Comments
 keymap.set("n", "<C-/>", ":CommentToggle<CR>", opts)
 
@@ -34,8 +29,11 @@ keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 keymap.set("n", "tw", ":tabclose<Return>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
+keymap.set("n", "sd", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>wd", "<C-w>s", { desc = "Split window down" })
+keymap.set("n", "<leader>wx", "<C-w>c", { desc = "Delete window split" })
 
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
@@ -46,15 +44,28 @@ keymap.set("n", "sl", "<C-w>j")
 -- Format
 keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
--- Better Shift A and I when visual select mode (Like in Zed)
-local function visual_end_insert()
-  vim.cmd("normal! l")
-  vim.cmd("normal! o")
-  vim.cmd("startinsert")
+-- Better Shift A and I in visual mode (Like in Zed)
+local function visual_selection_pos(mark)
+  local pos = vim.fn.getpos(mark)
+  local line = pos[2]
+  local col = pos[3]
+  local line_len = #vim.fn.getline(line)
+
+  col = math.max(1, math.min(col, math.max(line_len, 1)))
+  return { line, col - 1 }
 end
+
 local function visual_start_insert()
-  vim.cmd("normal! o")
+  vim.cmd("normal! \27")
+  vim.api.nvim_win_set_cursor(0, visual_selection_pos("'<"))
   vim.cmd("startinsert")
 end
-vim.keymap.set("v", "<S-I>", visual_start_insert, { desc = "Insert at start of visual selection" })
-vim.keymap.set("v", "<S-A>", visual_end_insert, { desc = "Insert at end of visual selection" })
+
+local function visual_end_insert()
+  vim.cmd("normal! \27")
+  vim.api.nvim_win_set_cursor(0, visual_selection_pos("'>"))
+  vim.cmd("normal! a")
+end
+
+keymap.set("x", "I", visual_start_insert, { desc = "Insert at start of visual selection" })
+keymap.set("x", "A", visual_end_insert, { desc = "Insert at end of visual selection" })

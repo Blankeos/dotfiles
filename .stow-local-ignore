@@ -1,6 +1,8 @@
 fonts/*
 vscode-settings.jsonc
-./nvim
+\.env
+nvim
+skills-lock\.json
 mprocs.log
 scripts/*
 README.md
