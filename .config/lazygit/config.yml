@@ -11,8 +11,9 @@ gui:
       - reverse
 git:
   commit:
+    generateCommand: "crabcode -p 'Examine the added-to-staging diff. Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model openai/gpt-5.3-codex-spark"
     # generateCommand: "claude -p 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model claude-haiku-4-5"
-    generateCommand: "opencode run --model opencode-go/deepseek-v4-flash 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.'"
+    # generateCommand: "opencode run --model opencode-go/deepseek-v4-flash 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.'"
   log:
     showGraph: always
     showWholeGraph: true

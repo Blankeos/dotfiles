@@ -325,6 +325,9 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
 - [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
 - [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
+- [ ] ~Muxy~ - `brew install --cask muxy-app/tap/muxy`
+- [ ] ~herdr~ - `curl -fsSL https://herdr.dev/install.sh | sh` - tmux for agents
+- [ ] Tailscale - `brew install tailscale`
 
 </details>
 

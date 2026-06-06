@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c '(/usr/bin/afplay /Users/carlo/dotfiles/.config/opencode/plugin/nintendolaunch.mp3 </dev/null >/dev/null 2>&1 &)'",
+            "timeout": 5,
+            "statusMessage": "Playing permission sound"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c '(/usr/bin/afplay /Users/carlo/dotfiles/.config/opencode/plugin/pokeding.wav </dev/null >/dev/null 2>&1 &)'",
+            "timeout": 5,
+            "statusMessage": "Playing stop sound"
+          }
+        ]
+      }
+    ]
+  }
+}

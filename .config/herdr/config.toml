@@ -1,0 +1,16 @@
+onboarding = false
+
+[theme]
+name = "vesper"
+
+[ui]
+agent_panel_scope = "all"
+
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "system"
+
+[keys]
+previous_tab = "alt+["
+next_tab = "alt+]"

@@ -9,6 +9,8 @@ procs:
     shell: bun upgrade
   claude:
     shell: claude upgrade
+  codex:
+    shell: brew upgrade --cask codex
   lazygit:
     shell: brew upgrade lazygit
   ohmyzsh:
@@ -17,3 +19,5 @@ procs:
     shell: cargo binstall --no-confirm lazygitrs
   iconmate:
     shell: cargo binstall --no-confirm iconmate
+  devrefs:
+    shell: cargo binstall --no-confirm devrefs
