@@ -73,11 +73,5 @@ local function visual_start_insert()
   vim.cmd("startinsert")
 end
 
-local function visual_end_insert()
-  vim.cmd("normal! \27")
-  vim.api.nvim_win_set_cursor(0, visual_selection_pos("'>"))
-  vim.cmd("normal! a")
-end
-
 keymap.set("x", "I", visual_start_insert, { desc = "Insert at start of visual selection" })
-keymap.set("x", "A", visual_end_insert, { desc = "Insert at end of visual selection" })
+keymap.set("x", "A", "<Esc>`>a", { desc = "Insert at end of visual selection" })
