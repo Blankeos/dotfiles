@@ -5,6 +5,18 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Important Accessibility: macOS Option navigation/editing in insert/cmdline prompts.
+keymap.set({ "i", "c" }, "<M-BS>", "<C-w>", opts)
+keymap.set({ "i", "c" }, "<A-BS>", "<C-w>", opts)
+keymap.set({ "i", "c" }, "<M-Left>", "<S-Left>", opts)
+keymap.set({ "i", "c" }, "<A-Left>", "<S-Left>", opts)
+keymap.set({ "i", "c" }, "<M-b>", "<S-Left>", opts)
+keymap.set({ "i", "c" }, "<A-b>", "<S-Left>", opts)
+keymap.set({ "i", "c" }, "<M-Right>", "<S-Right>", opts)
+keymap.set({ "i", "c" }, "<A-Right>", "<S-Right>", opts)
+keymap.set({ "i", "c" }, "<M-f>", "<S-Right>", opts)
+keymap.set({ "i", "c" }, "<A-f>", "<S-Right>", opts)
+
 keymap.set("n", "x", '"_x') -- Don't store in clipboard when removing char
 
 -- Increment/decrement
@@ -44,7 +56,7 @@ keymap.set("n", "sl", "<C-w>j")
 -- Format
 keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
--- Better Shift A and I in visual mode (Like in Zed)
+-- Accessibility: Better Shift A and I in visual mode (Like in Zed)
 local function visual_selection_pos(mark)
   local pos = vim.fn.getpos(mark)
   local line = pos[2]
