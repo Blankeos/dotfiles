@@ -26,3 +26,5 @@ procs:
     shell: cargo binstall --no-confirm crabcode
   devrefs:
     shell: cargo binstall --no-confirm devrefs
+  cftun:
+    shell: cargo binstall --no-confirm cftun
