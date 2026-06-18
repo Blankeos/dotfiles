@@ -2,7 +2,9 @@ procs:
   uv:
     shell: uv self update
   opencode:
-    shell: brew upgrade sst/tap/opencode
+    shell: brew upgrade anomalyco/tap/opencode
+  grok:
+    shell: grok update
   rustup:
     shell: rustup upgrade
   bun:
@@ -15,9 +17,12 @@ procs:
     shell: brew upgrade lazygit
   ohmyzsh:
     shell: zsh -ic 'omz update'
+  # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
   iconmate:
     shell: cargo binstall --no-confirm iconmate
+  crabcode:
+    shell: cargo binstall --no-confirm crabcode
   devrefs:
     shell: cargo binstall --no-confirm devrefs
