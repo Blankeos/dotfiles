@@ -39,17 +39,18 @@
     // },
   },
   "agent": {
-    "vlm-agent": {
-      "mode": "subagent",
-      "description": "For non-vision models to analyze images. Before calling this agent, ALWAYS run extract_images tool first to save session images to /tmp/opencode-images/ then pass the resulting file paths in your prompt so this agent can read them.",
-      // "model": "fireworks-ai/accounts/fireworks/models/kimi-k2p5",
-      // "model": "opencode-go/kimi-k2.6",
-      "model": "crof/kimi-k2.6",
-      "prompt": "You are an expert frontend developer specializing in modern UI/UX design and a skilled image analyst. Do not install any other library, just use your vision capability. You can either analyze provided images to describe their content, layout, and visual details, or perform frontend development tasks based on those descriptions or direct instructions.",
-      "permission": {
-        "read": { "/tmp/opencode-images/*": "allow" },
-        "write": { "/tmp/opencode-images/*": "allow" },
-      },
-    },
+    // "vlm-agent": {
+    // "mode": "subagent",
+    // "description": "For non-vision models to analyze images. Before calling this agent, ALWAYS run extract_images tool first to save session images to /tmp/opencode-images/ then pass the resulting file paths in your prompt so this agent can read them.",
+    // "model": "fireworks-ai/accounts/fireworks/models/kimi-k2p5",
+    // "model": "opencode-go/kimi-k2.6",
+    // "model": "crof/kimi-k2.6",
+    // "model": "commandcode/moonshotai/Kimi-K2.5",
+    // "prompt": "You are an expert frontend developer specializing in modern UI/UX design and a skilled image analyst. Do not install any other library, just use your vision capability. You can either analyze provided images to describe their content, layout, and visual details, or perform frontend development tasks based on those descriptions or direct instructions.",
+    // "permission": {
+    //   "read": { "/tmp/opencode-images/*": "allow" },
+    //   "write": { "/tmp/opencode-images/*": "allow" },
+    // },
+    // },
   },
 }
