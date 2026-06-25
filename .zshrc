@@ -136,9 +136,8 @@ alias cd="z"
 
 alias lgg="lazygit"
 alias lg="lazygitrs"
-
 alias oc="opencode"
-
+alias cc="crabcode"
 alias claude="claude --permission-mode acceptEdits"
 
 alias uptools="$HOME/dotfiles/scripts/update-tools.sh"
@@ -202,3 +201,9 @@ export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
 
 # libpq (hook pg_dump) or just do `brew link libpq`
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<

@@ -1,0 +1,58 @@
+#!/usr/bin/env bun
+
+const usage = `Usage: killport <port>
+
+Finds processes listening on the given TCP port and kills them with SIGKILL.`;
+
+const portArg = Bun.argv[2];
+
+if (!portArg || portArg === "-h" || portArg === "--help") {
+  console.log(usage);
+  process.exit(portArg ? 0 : 1);
+}
+
+const port = Number(portArg);
+
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  console.error(`Invalid port: ${portArg}`);
+  console.error(usage);
+  process.exit(1);
+}
+
+const proc = Bun.spawnSync({
+  cmd: ["lsof", "-ti", `tcp:${port}`],
+  stdout: "pipe",
+  stderr: "pipe",
+});
+
+if (proc.exitCode !== 0 && proc.stdout.length === 0) {
+  console.log(`No process found listening on port ${port}.`);
+  process.exit(0);
+}
+
+const pids = new TextDecoder()
+  .decode(proc.stdout)
+  .split(/\s+/)
+  .filter(Boolean)
+  .filter((pid, index, all) => all.indexOf(pid) === index);
+
+if (pids.length === 0) {
+  console.log(`No process found listening on port ${port}.`);
+  process.exit(0);
+}
+
+for (const pid of pids) {
+  const kill = Bun.spawnSync({
+    cmd: ["kill", "-9", pid],
+    stdout: "pipe",
+    stderr: "pipe",
+  });
+
+  if (kill.exitCode === 0) {
+    console.log(`Killed PID ${pid} on port ${port}.`);
+  } else {
+    const err = new TextDecoder().decode(kill.stderr).trim();
+    console.error(`Failed to kill PID ${pid}${err ? `: ${err}` : ""}`);
+    process.exitCode = 1;
+  }
+}
