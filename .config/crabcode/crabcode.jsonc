@@ -1,5 +1,5 @@
 {
-  // "$schema": "crabcode.schema.json",
+  "$schema": "https://raw.githubusercontent.com/blankeos/crabcode/main/crabcode.schema.json",
   // Crabcode theme id (see src/generated_themes/carbonfox.json)
   // "theme": "carbonfox",
   "notifications": {
@@ -20,6 +20,20 @@
     "error": {
       "soundEnabled": true,
       "soundFile": "/Users/carlo/Desktop/Projects/crabcode/sounds/error.mp3",
+    },
+  },
+  "agent": {
+    "vlm-agent": {
+      "model": "commandcode/moonshotai/Kimi-K2.5",
+    },
+    "frontend-agent": {
+      "mode": "subagent",
+      "description": "Fast frontend subagent",
+      // "model": "xai/grok-composer-2.5-fast", // Fastest creative agent I think
+      "model": "zai-coding-plan/glm-5.2", // Best quality frontend agent so far (even beats proprietary models as of June 19, 2026)
+      // "model": "commandcode/moonshotai/Kimi-K2.5",
+      "reasoningEffort": null,
+      "prompt": "You are an expert frontend developer specializing in modern UI/UX design. Perform frontend development tasks based on those descriptions or direct instructions.",
     },
   },
 }
