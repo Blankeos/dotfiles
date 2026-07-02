@@ -28,3 +28,7 @@ procs:
     shell: cargo binstall --no-confirm devrefs
   cftun:
     shell: cargo binstall --no-confirm cftun
+  uplate:
+    shell: cargo binstall --no-confirm uplate
+  crabenv:
+    shell: cargo binstall --no-confirm crabenv
