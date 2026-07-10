@@ -17,6 +17,8 @@ procs:
     shell: brew upgrade lazygit
   ohmyzsh:
     shell: zsh -ic 'omz update'
+  herdr:
+    shell: brew upgrade herdr
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs

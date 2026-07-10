@@ -1,0 +1,269 @@
+// Zed settings. documentation: https://zed.dev/docs/configuring-zed
+{
+  "auto_update": false, // Sometimes Zed breaks
+
+  //  1️⃣ Edit usually
+  "redact_private_values": false,
+
+  // CLI
+  "cli_default_open_behavior": "new_window",
+
+  // Editor must-haves:
+  "outline_panel": { "dock": "right" },
+  "collaboration_panel": { "dock": "right" },
+  "git_panel": { "dock": "right", "tree_view": false },
+  "file_scan_inclusions": ["app.log", ".env"],
+
+  "when_closing_with_no_tabs": "keep_window_open",
+  "confirm_quit": true,
+
+  "format_on_save": "on",
+  "extend_comment_on_newline": true,
+  "soft_wrap": "editor_width",
+  "show_wrap_guides": true,
+  "diff_view_style": "split",
+  "indent_guides": { "enabled": true, "active_line_width": 3 },
+
+  "vim": { "toggle_relative_line_numbers": true },
+  "vim_mode": true,
+
+  // 🎨 Aesthetics
+  "theme": "Blankeos Zen Dark (Blurred)",
+  "icon_theme": "Catppuccin Mocha",
+  // Theme Overrides
+  // "experimental.theme_overrides": {
+  //   "background.appearance": "transparent"
+  // }
+  "toolbar": { "quick_actions": false },
+  "tab_bar": {
+    "show": true,
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false,
+  },
+  "tabs": {
+    "file_icons": true,
+    "show_close_button": "hidden",
+    "show_diagnostics": "all",
+    "git_status": true,
+  },
+  "buffer_font_size": 12.0,
+  "ui_font_size": 16,
+  "ui_font_family": "BlexMono Nerd Font",
+  "markdown_preview_font_family": ".ZedSans",
+  "buffer_font_family": "BlexMono Nerd Font",
+
+  //  🧠 AI (Tbh just use crabcode and lazygitrs)
+  "agent_servers": {
+    "opencode": {
+      "favorite_config_option_values": {
+        "model": ["ollama-cloud/kimi-k2.6:cloud"],
+      },
+      "type": "registry",
+    },
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "effort": ["medium"],
+        "mode": ["acceptEdits"],
+        "model": ["opus"],
+      },
+      "default_config_options": {
+        "effort": "medium",
+        "mode": "acceptEdits",
+        "model": "opus",
+      },
+      "type": "registry",
+    },
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": false,
+      "settings": {},
+    },
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "https://ollama.com", // Uncomment for local
+    },
+  },
+  "agent": {
+    "dock": "left",
+    "default_profile": "write",
+    "default_model": {
+      "provider": "ollama",
+      "model": "kimi-k2.6",
+      "enable_thinking": true,
+    },
+    "play_sound_when_agent_done": "always",
+    "commit_message_model": { "provider": "ollama", "model": "kimi-k2.5" },
+    "inline_assistant_model": { "provider": "ollama", "model": "kimi-k2.6" },
+    "model_parameters": [],
+  },
+
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null,
+    },
+  },
+
+  // "wrap_guides": [80],
+  // "soft_wrap": "editor_width",
+  "use_autoclose": true,
+  "project_panel": {
+    "starts_open": false,
+    "entry_spacing": "comfortable",
+    "dock": "right",
+  },
+  "terminal": {
+    "flexible": false,
+    "dock": "bottom",
+    "scrollbar": {},
+    "button": true,
+    "font_family": "BlexMono Nerd Font",
+    "font_size": 12,
+    "option_as_meta": true,
+  },
+  // 🇵🇭 LSP
+  "file_types": {
+    "JSONC": ["code-snippets", "prettierrc"],
+    "HTML": ["*.json.tera"],
+    "Dockerfile": ["Dockerfile.*"],
+  },
+
+  "languages": {
+    // JS World
+    "Markdown": {
+      "formatter": "prettier",
+      "format_on_save": "on",
+    },
+    "HTML": {
+      "formatter": "prettier",
+      "format_on_save": "on",
+    },
+    "JSON": {
+      "use_on_type_format": false,
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "JavaScript": {
+      "use_on_type_format": false,
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "TypeScript": {
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
+      "use_on_type_format": false,
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "TSX": {
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
+      "use_on_type_format": false,
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "CSS": {
+      "use_on_type_format": false,
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+
+    "Svelte": {
+      "formatter": "prettier",
+      "use_autoclose": true,
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+      },
+    },
+
+    // OTHER LANGUAGES
+    "Rust": {
+      // "inlay_hints": {
+      //   "show_type_hints": true,
+      //   "enabled": true
+      // }
+    },
+    "Dart": {
+      "inlay_hints": {
+        "show_type_hints": true,
+        "show_other_hints": true,
+        "show_parameter_hints": true,
+        "enabled": true,
+      },
+    },
+    "PHP": {
+      "language_servers": ["intelephense", "!phpactor", "..."],
+    },
+    "JSON5": {
+      "language_servers": ["color-lsp"],
+    },
+    // "Tera": { "language_servers": ["color-lsp"] },
+    // "Tera (JSON)": { "language_servers": ["color-lsp"] },
+    // "Tera (CSS)": { "language_servers": ["color-lsp"] },
+    // "Tera (HTML)": { "language_servers": ["color-lsp"] },
+    // "Tera (YAML)": { "language_servers": ["color-lsp"] },
+    // "Tera (TOML)": { "language_servers": ["color-lsp"] }
+  },
+  // "lsp_document_colors": "background", // Enable if you want the color to be the bg of the string
+  "lsp": {
+    // https://github.com/zed-industries/zed/issues/22445#issuecomment-2571318408
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": [".*Class", ".*ClassName"],
+        "experimental": {
+          "classRegex": [
+            ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+            ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+            ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+            ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+          ],
+        },
+      },
+    },
+    "biome": {
+      "settings": {
+        "require_config_file": true,
+      },
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "completion": {
+          "callable": {
+            "snippets": "none",
+          },
+        },
+      },
+    },
+  },
+  // Doesn't work on a per "language" level
+  "inlay_hints": { "show_background": true },
+}

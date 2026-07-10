@@ -3,9 +3,6 @@
   // Crabcode theme id (see src/generated_themes/carbonfox.json)
   // "theme": "carbonfox",
 
-  // Leader session model when magnitude orchestrator is enabled (uncomment with magnitude + default_agent below).
-  // "model": "zai-coding-plan/glm-5.2",
-
   "notifications": {
     "complete": {
       "terminal": "auto",
@@ -27,82 +24,84 @@
     },
   },
 
+  "small_model": "opencode/deepseek-v4-flash-free",
+
   "agent": {
     // --- START: Magnitude-style orchestrator ---
-    "magnitude": {
-      "mode": "primary",
-      "description": "Lead agent. Delegates exploration, planning, implementation, and review to cheaper/specialized workers via task.",
-      "prompt": "You are Magnitude, a lead orchestrator agent. Your main job is to route work through this harness using the task tool. Do not behave like the normal Build agent.\n\nFor any non-trivial software change, you MUST NOT implement directly in the parent session after exploration. Use this worker pipeline:\n1. scout — read-only codebase scan on the cheap/context model. Use this first when repo context is missing.\n2. architect — concrete implementation plan from scout findings + user goal. Use before coding unless the change is truly tiny. Present the plan to the user and wait for approval when scope/risk is non-trivial.\n3. engineer — coding worker. All meaningful file edits should be delegated to engineer, not done by the parent. Spawn multiple engineers in parallel only for independent chunks.\n4. critic — read-only review of resulting changes before final handoff. Fix issues you agree with, preferably by delegating follow-up edits to engineer.\n\nDirect parent tool use is allowed only for tiny glue checks, reading a single file, or final verification. If you catch yourself about to edit/write/apply_patch for the main implementation, stop and spawn engineer instead.\n\nAlso available: explore (built-in read-only), general (broad worker), frontend-agent (UI), vlm-agent (images). You coordinate, summarize, and decide when delegation is safe; workers execute.",
-      "task_permissions": {
-        "scout": "allow",
-        "architect": "allow",
-        "engineer": "allow",
-        "critic": "allow",
-        "explore": "allow",
-        "general": "allow",
-        "frontend-agent": "allow",
-        "vlm-agent": "allow",
-      },
-    },
+    // "magnitude": {
+    //   "mode": "primary",
+    //   "description": "Lead agent. Delegates exploration, planning, implementation, and review to cheaper/specialized workers via task.",
+    //   "prompt": "You are Magnitude, a lead orchestrator agent. Your main job is to route work through this harness using the task tool. Do not behave like the normal Build agent.\n\nFor any non-trivial software change, you MUST NOT implement directly in the parent session after exploration. Use this worker pipeline:\n1. @explore — read-only codebase scan on the cheap/context model. Use this first when repo context is missing.\n2. @architect — concrete implementation plan from explore findings + user goal. Use before coding unless the change is truly tiny. Present the plan to the user and wait for approval when scope/risk is non-trivial.\n3. @engineer — coding worker. All meaningful file edits should be delegated to engineer, not done by the parent. Spawn multiple engineers in parallel only for independent chunks.\n4. @critic — read-only review of resulting changes before final handoff. Fix issues you agree with, preferably by delegating follow-up edits to engineer.\n\nDirect parent tool use is allowed only for tiny glue checks, reading a single file, or final verification. If you catch yourself about to edit/write/apply_patch for the main implementation, stop and spawn engineer instead.\n\nAlso available: explore (built-in read-only), general (broad worker), frontend-agent (UI), vlm-agent (images). You coordinate, summarize, and decide when delegation is safe; workers execute.",
+    //   "task_permissions": {
+    //     "scout": "allow",
+    //     "architect": "allow",
+    //     "engineer": "allow",
+    //     "critic": "allow",
+    //     "explore": "allow",
+    //     "general": "allow",
+    //     "frontend-agent": "allow",
+    //     "vlm-agent": "allow",
+    //   },
+    // },
 
-    "scout": {
-      "mode": "subagent",
-      "description": "Fast read-only codebase scout. Use for context gathering before planning or implementation — not for writing code.",
-      "model": "crof/deepseek-v4-flash",
-      "reasoningEffort": null,
-      "max_steps": 12,
-      "tools": ["glob", "grep", "list", "read", "webfetch"],
-      "permission": {
-        "edit": "deny",
-        "write": "deny",
-        "bash": "deny",
-      },
-      "prompt": "You are a fast scout. Given the parent task, scan the repo efficiently (glob/grep/read/list). Return: relevant paths, architecture notes, and short code excerpts with file:line. No edits. Be dense and actionable for the lead agent.",
-    },
+    // "explore": {
+    //   "mode": "subagent",
+    //   // "description": "Fast read-only codebase scout. Use for context gathering before planning or implementation — not for writing code.",
+    //   "model": "commandcode/deepseek/deepseek-v4-flash",
+    //   // "reasoningEffort": null,
+    //   // "max_steps": 12,
+    //   // "tools": ["glob", "grep", "list", "read", "webfetch"],
+    //   // "permission": {
+    //   //   "edit": "deny",
+    //   //   "write": "deny",
+    //   //   "bash": "deny",
+    //   // },
+    //   // "prompt": "You are a fast scout. Given the parent task, scan the repo efficiently (glob/grep/read/list). Return: relevant paths, architecture notes, and short code excerpts with file:line. No edits. Be dense and actionable for the lead agent.",
+    // },
 
-    "architect": {
-      "mode": "subagent",
-      "description": "Planning specialist. Turns scout/explore output into a concrete, step-by-step implementation plan with files to touch and risks.",
-      "model": "crof/kimi-k2.7-code",
-      "reasoningEffort": null,
-      "max_steps": 16,
-      "tools": ["glob", "grep", "list", "read", "update_plan", "question"],
-      "permission": {
-        "edit": "deny",
-        "write": "deny",
-        "bash": "deny",
-      },
-      "prompt": "You are the architect. Produce a clear implementation plan: goal, approach, ordered steps, files/modules, test/verification steps, and parallelizable chunks. You may read the codebase and use update_plan. Do not edit source files. End with a concise plan the user can approve.",
-    },
+    // "architect": {
+    //   "mode": "subagent",
+    //   "description": "Planning specialist. Turns scout/explore output into a concrete, step-by-step implementation plan with files to touch and risks.",
+    //   "model": "commandcode/moonshotai/kimi-k2.7-code",
+    //   "reasoningEffort": null,
+    //   "max_steps": 16,
+    //   "tools": ["glob", "grep", "list", "read", "update_plan", "question"],
+    //   "permission": {
+    //     "edit": "deny",
+    //     "write": "deny",
+    //     "bash": "deny",
+    //   },
+    //   "prompt": "You are the architect. Produce a clear implementation plan: goal, approach, ordered steps, files/modules, test/verification steps, and parallelizable chunks. You may read the codebase and use update_plan. Do not edit source files. End with a concise plan the user can approve.",
+    // },
 
-    "engineer": {
-      "mode": "subagent",
-      "description": "Implementation worker. Executes one focused slice of an approved plan with full coding tools.",
-      "model": "crof/kimi-k2.7-code",
-      "reasoningEffort": null,
-      "max_steps": 24,
-      "tools": ["*"],
-      "task_permissions": {
-        "scout": "allow",
-        "explore": "allow",
-        "vlm-agent": "allow",
-      },
-      "prompt": "You are an engineer subagent. Implement exactly what the parent prompt specifies — one coherent slice of work. Follow repo conventions, run relevant checks when reasonable, and report what you changed with paths. Spawn scout/explore only if you lack context.",
-    },
+    // "engineer": {
+    //   "mode": "subagent",
+    //   "description": "Implementation worker. Executes one focused slice of an approved plan with full coding tools.",
+    //   "model": "commandcode/moonshotai/kimi-k2.7-code",
+    //   "reasoningEffort": null,
+    //   "max_steps": 24,
+    //   "tools": ["*"],
+    //   "task_permissions": {
+    //     "scout": "allow",
+    //     "explore": "allow",
+    //     "vlm-agent": "allow",
+    //   },
+    //   "prompt": "You are an engineer subagent. Implement exactly what the parent prompt specifies — one coherent slice of work. Follow repo conventions, run relevant checks when reasonable, and report what you changed with paths. Spawn scout/explore only if you lack context.",
+    // },
 
-    "critic": {
-      "mode": "subagent",
-      "description": "Read-only reviewer. Checks implementation for bugs, slop, missing edge cases, and test gaps.",
-      "model": "crof/kimi-k2.7-code",
-      "reasoningEffort": null,
-      "max_steps": 14,
-      "tools": ["glob", "grep", "list", "read", "bash"],
-      "permission": {
-        "edit": "deny",
-        "write": "deny",
-      },
-      "prompt": "You are the critic. Review the work described in the parent prompt against the actual repo state. List findings by severity with file:line references. Suggest fixes but do not edit files. Note missing tests or verification.",
-    },
+    // "critic": {
+    //   "mode": "subagent",
+    //   "description": "Read-only reviewer. Checks implementation for bugs, slop, missing edge cases, and test gaps.",
+    //   "model": "commandcode/moonshotai/Kimi-K2.7-Code",
+    //   "reasoningEffort": null,
+    //   "max_steps": 14,
+    //   "tools": ["glob", "grep", "list", "read", "bash"],
+    //   "permission": {
+    //     "edit": "deny",
+    //     "write": "deny",
+    //   },
+    //   "prompt": "You are the critic. Review the work described in the parent prompt against the actual repo state. List findings by severity with file:line references. Suggest fixes but do not edit files. Note missing tests or verification.",
+    // },
     // --- END: Magnitude-style orchestrator ---
 
     "vlm-agent": {
@@ -112,8 +111,10 @@
     "frontend-agent": {
       "mode": "subagent",
       "description": "Fast frontend subagent",
-      // "model": "xai/grok-composer-2.5-fast", // Fastest creative agent I think
-      "model": "zai-coding-plan/glm-5.2", // Best quality frontend agent so far (even beats proprietary models as of June 19, 2026)
+      "model": "xai/grok-composer-2.5-fast", // Fastest creative agent I think
+      // "model": "xai/grok-4.5", // Fastest creative agent I think
+      // "model": "zai-coding-plan/glm-5.2", // smartest open model rn
+      // "model": "commandcode/zai-org/glm-5.2", // Best quality frontend agent so far (even beats proprietary models as of June 19, 2026)
       // "model": "commandcode/moonshotai/Kimi-K2.5",
       "reasoningEffort": null,
       "prompt": "You are an expert frontend developer specializing in modern UI/UX design. Perform frontend development tasks based on those descriptions or direct instructions.",

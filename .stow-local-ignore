@@ -8,3 +8,6 @@ scripts/*
 README.md
 VIVALDI_GUIDE.md
 .git
+
+.config/zed/extensions.back
+.config/zed/settings.json.back

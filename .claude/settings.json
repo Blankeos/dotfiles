@@ -1,79 +1,80 @@
 {
-  "$schema" : "https:\/\/json.schemastore.org\/claude-code-settings.json",
-  "hooks" : {
-    "PermissionDenied" : [
-      {
-        "hooks" : [
-          {
-            "async" : true,
-            "command" : "afplay ~\/.config\/opencode\/plugin\/nintendoerror.mp3 2>\/dev\/null -v 0.3 || true",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "PermissionRequest" : [
-      {
-        "hooks" : [
-          {
-            "async" : true,
-            "command" : "afplay ~\/.config\/opencode\/plugin\/nintendolaunch.mp3 2>\/dev\/null || true",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "Stop" : [
-      {
-        "hooks" : [
-          {
-            "async" : true,
-            "command" : "afplay ~\/.config\/opencode\/plugin\/pokeding.wav 2>\/dev\/null || true",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "StopFailure" : [
-      {
-        "hooks" : [
-          {
-            "async" : true,
-            "command" : "afplay ~\/.config\/opencode\/plugin\/nintendoerror.mp3 2>\/dev\/null -v 0.3 || true",
-            "type" : "command"
-          }
-        ]
-      }
-    ]
-  },
-  "permissions" : {
-    "allow" : [
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
       "Read(**)",
-      "Write(.\/**)",
+      "Write(./**)",
       "Bash(**)"
     ],
-    "ask" : [
-      "Read(**\/.env*)",
-      "Read(**\/.gitignore*)",
-      "Read(**\/.git\/**)",
-      "Read(**\/*.env)",
-      "Read(**\/.gitignore)",
-      "Read(..\/**)",
-      "Read(..\/..\/**)",
-      "Read(\/absolute\/paths\/outside\/**)",
-      "Write(..\/**)",
-      "Write(..\/..\/**)",
-      "Write(\/absolute\/paths\/outside\/**)",
-      "Bash(rm *)",
-      "Bash(rm -**)"
-    ],
-    "deny" : [
+    "deny": [
       "Bash(git push**)",
       "Bash(git branch -d**)",
       "Bash(git branch -D**)",
       "Bash(git reset --hard**)",
       "Bash(git clean -f**)",
       "Bash(git rebase -i**)"
+    ],
+    "ask": [
+      "Read(**/.env*)",
+      "Read(**/.gitignore*)",
+      "Read(**/.git/**)",
+      "Read(**/*.env)",
+      "Read(**/.gitignore)",
+      "Read(../**)",
+      "Read(../../**)",
+      "Read(/absolute/paths/outside/**)",
+      "Write(../**)",
+      "Write(../../**)",
+      "Write(/absolute/paths/outside/**)",
+      "Bash(rm *)",
+      "Bash(rm -**)"
     ]
-  }
+  },
+  "hooks": {
+    "PermissionDenied": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/nintendoerror.mp3 2>/dev/null -v 0.3 || true",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/nintendolaunch.mp3 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/pokeding.wav 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.config/opencode/plugin/nintendoerror.mp3 2>/dev/null -v 0.3 || true",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "tui": "fullscreen"
 }
