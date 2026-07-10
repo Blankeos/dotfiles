@@ -1,49 +1,43 @@
-Blankeos Zen v0.0.6
-Color Highlight v0.2.1
-HTML
-Git Firefly
-TOML
-Java
-Catppuccin
-Dockerfile
-SQL
-PHP
-Vue
-Catppuccin Icons
-SCSS & SASS
-Make
-C#
-Lua
-XML
-Terraform
-LOG
-Svelte
-Dart
-Swift
-Astro
-Emmet
-Zig
-Nix
-Prisma
-Context7 MCP Server
-GraphQL
-Proto
-Docker Compose
-Colored Zed Icons Theme
-GitHub Dark Default
-Justfile
-Gleam
-Scheme
-JSON5
-Flutter Snippets
-Caddyfile
-Wgsl
-tsgo
-poimandres
-Vitesse Theme
-Tera
-RustRover Dark Theme
-Mnemonic
-Beanseeds Pro Theme
-MDX
-Defold
+// I just update this using ⌘⇧P > "zed: copy installed extensions into clipboard"
+
+Installed extensions (40):
+- Astro (astro) v0.1.11
+- Biome (biome) v0.3.1
+- Blankeos Zen (blankeos-zen) v0.0.6 (dev)
+- C# (csharp) v1.2.0
+- Caddyfile (caddyfile) v0.0.5
+- Catppuccin Icons (catppuccin-icons) v1.23.1
+- Color Highlight (color-highlight) v0.2.2
+- Colored Zed Icons Theme (colored-zed-icons-theme) v0.3.1
+- Dart (dart) v0.3.8
+- Defold (defold) v0.1.4
+- Docker Compose (docker-compose) v0.1.0
+- Dockerfile (dockerfile) v0.2.1
+- Emmet (emmet) v0.0.13
+- Flutter Snippets (flutter-snippets) v0.2.0
+- Git Firefly (git-firefly) v0.1.8
+- Gleam (gleam) v0.6.0
+- GraphQL (graphql) v1.0.5
+- HTML (html) v0.3.1
+- JSON5 (json5) v0.1.0
+- Justfile (just) v0.2.0
+- LOG (log) v0.0.7
+- Lua (lua) v0.1.9
+- MDX (mdx) v0.4.0
+- Make (make) v1.1.2
+- Nix (nix) v0.1.4
+- Prisma (prisma) v0.1.8
+- Proto (proto) v0.3.2
+- SCSS & SASS (scss) v0.2.0
+- SQL (sql) v1.1.7
+- Scheme (scheme) v0.0.6
+- Svelte (svelte) v0.2.11
+- Swift (swift) v0.4.9
+- TOML (toml) v1.0.3
+- Tera (tera) v1.3.0
+- Terraform (terraform) v0.1.8
+- Vue (vue) v0.3.6
+- Wgsl (wgsl) v0.0.1
+- XML (xml) v0.1.0
+- Zig (zig) v0.4.2
+- tsgo (tsgo) v0.0.5
