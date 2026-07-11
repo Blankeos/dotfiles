@@ -28,7 +28,7 @@
   "vim_mode": true,
 
   // 🎨 Aesthetics
-  "theme": "Blankeos Zen Dark (Blurred)",
+  "theme": "Blankeos Zen Dark",
   "icon_theme": "Catppuccin Mocha",
   // Theme Overrides
   // "experimental.theme_overrides": {
@@ -86,6 +86,7 @@
     },
   },
   "agent": {
+    "terminal_init_command": "cc",
     "dock": "left",
     "default_profile": "write",
     "default_model": {

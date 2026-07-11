@@ -3,6 +3,7 @@ onboarding = false
 [theme]
 name = "vesper"
 
+auto_switch = false
 [ui]
 agent_panel_scope = "all"
 

@@ -47,12 +47,6 @@ keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wd", "<C-w>s", { desc = "Split window down" })
 keymap.set("n", "<leader>wx", "<C-w>c", { desc = "Delete window split" })
 
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>j")
-
 -- Format
 keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
