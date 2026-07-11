@@ -1,0 +1,10 @@
+# Blankeos Zen (blurred) — transparent UI; pair with a transparent terminal.
+
+inherits = "blankeos-zen"
+
+"ui.background" = { fg = "foreground" }
+"ui.statusline" = { fg = "foreground" }
+"ui.statusline.inactive" = { fg = "muted" }
+"ui.popup" = { fg = "foreground" }
+"ui.menu" = { fg = "foreground" }
+"ui.help" = { fg = "foreground" }

@@ -24,8 +24,9 @@
   "diff_view_style": "split",
   "indent_guides": { "enabled": true, "active_line_width": 3 },
 
+  "helix_mode": true,
+  // "vim_mode": true,
   "vim": { "toggle_relative_line_numbers": true },
-  "vim_mode": true,
 
   // 🎨 Aesthetics
   "theme": "Blankeos Zen Dark",

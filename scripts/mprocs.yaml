@@ -19,6 +19,10 @@ procs:
     shell: zsh -ic 'omz update'
   herdr:
     shell: brew upgrade herdr
+  zoxide:
+    shell: brew upgrade zoxide
+  eza:
+    shell: brew upgrade eza
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs

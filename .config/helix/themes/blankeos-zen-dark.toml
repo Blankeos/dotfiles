@@ -1,0 +1,99 @@
+# Blankeos Zen Dark — solid (#121212) from zen.zed/themes/blankeos-zen-dark.json
+
+"ui.background" = { bg = "background" }
+"ui.text" = { fg = "foreground" }
+"ui.text.focus" = { fg = "foreground-bright" }
+
+"ui.cursor.primary" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.insert" = { fg = "background", bg = "accent" }
+"ui.cursor.primary.select" = { fg = "background", bg = "accent" }
+"ui.cursor.match" = { fg = "background", bg = "element-hover" }
+
+"ui.cursorline.primary" = { bg = "active-line" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "selection-primary" }
+
+"ui.linenr" = { fg = "muted" }
+"ui.linenr.selected" = { fg = "accent", modifiers = ["bold"] }
+
+"ui.statusline" = { fg = "foreground", bg = "background" }
+"ui.statusline.inactive" = { fg = "muted", bg = "background" }
+"ui.statusline.normal" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "foreground", bg = "elevated" }
+"ui.menu.selected" = { fg = "background", bg = "accent" }
+"ui.popup" = { fg = "foreground", bg = "elevated" }
+"ui.window" = { fg = "border" }
+"ui.help" = { fg = "foreground", bg = "elevated" }
+"ui.highlight" = { bg = "element-hover" }
+
+"attribute" = { fg = "label", modifiers = ["italic"] }
+"keyword" = { fg = "accent" }
+"keyword.control" = { fg = "accent" }
+"keyword.directive" = { fg = "accent" }
+namespace = { fg = "accent" }
+punctuation = { fg = "foreground" }
+"punctuation.delimiter" = { fg = "foreground" }
+operator = { fg = "label" }
+special = { fg = "accent" }
+variable = { fg = "constant", modifiers = ["italic"] }
+"variable.parameter" = { fg = "foreground-bright" }
+"variable.builtin" = { fg = "pink" }
+"variable.other.member" = { fg = "property" }
+type = { fg = "type" }
+"type.builtin" = { fg = "type" }
+constructor = { fg = "accent" }
+function = { fg = "function" }
+"function.builtin" = { fg = "function" }
+"function.macro" = { fg = "accent" }
+tag = { fg = "accent" }
+comment = { fg = "muted-comment", modifiers = ["italic"] }
+constant = { fg = "constant" }
+"constant.builtin" = { fg = "pink" }
+"constant.numeric" = { fg = "accent" }
+"constant.character.escape" = { fg = "accent" }
+string = { fg = "accent" }
+label = { fg = "accent" }
+
+"markup.heading" = { fg = "label" }
+"markup.link.text" = { fg = "accent" }
+"markup.link.url" = { fg = "accent", modifiers = ["underlined"] }
+"markup.raw" = { fg = "accent" }
+
+"diagnostic.error" = { underline = { color = "pink", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "curl" } }
+
+error = "pink"
+warning = "warning"
+info = "info"
+hint = "hint"
+
+[palette]
+background = "#121212"
+elevated = "#121212"
+active-line = "#1e1e28"
+selection = "#282834"
+selection-primary = "#343444"
+border = "#ffffff10"
+element-hover = "#2a2a34"
+
+foreground = "#a6accd"
+foreground-bright = "#e4f0fb"
+muted = "#767c9d"
+muted-comment = "#767c9dB0"
+type = "#a6accdC0"
+
+accent = "#60a5fa"
+function = "#add7ff"
+label = "#91b4d5"
+constant = "#e4f0fb"
+property = "#ffffff"
+cursor = "#bae6fd"
+pink = "#d0679d"
+warning = "#fffac2"
+info = "#ADD7FF"
+hint = "#969696"
