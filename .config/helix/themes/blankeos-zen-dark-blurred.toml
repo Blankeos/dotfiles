@@ -8,3 +8,8 @@ inherits = "blankeos-zen-dark"
 "ui.popup" = { fg = "foreground" }
 "ui.menu" = { fg = "foreground" }
 "ui.help" = { fg = "foreground" }
+
+# Keep bufferline opaque so tabs stay readable on a transparent terminal.
+"ui.bufferline.background" = { bg = "active-line" }
+"ui.bufferline" = { fg = "muted", bg = "active-line" }
+"ui.bufferline.active" = { fg = "foreground-bright", bg = "selection-primary", underline = { color = "accent", style = "line" } }

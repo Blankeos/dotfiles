@@ -22,6 +22,10 @@
 "ui.statusline.insert" = { fg = "background", bg = "accent", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "background", bg = "accent", modifiers = ["bold"] }
 
+"ui.bufferline.background" = { bg = "active-line" }
+"ui.bufferline" = { fg = "muted", bg = "active-line" }
+"ui.bufferline.active" = { fg = "foreground-bright", bg = "selection-primary", underline = { color = "accent", style = "line" } }
+
 "ui.menu" = { fg = "foreground", bg = "elevated" }
 "ui.menu.selected" = { fg = "background", bg = "accent" }
 "ui.popup" = { fg = "foreground", bg = "elevated" }

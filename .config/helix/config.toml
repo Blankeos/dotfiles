@@ -2,6 +2,10 @@ theme = "blankeos-zen-dark-blurred"
 
 [editor]
 line-number = "relative"
+bufferline = "always"
+
+[editor.soft-wrap]
+enable = false
 
 [editor.file-picker]
 hidden = false
@@ -15,3 +19,17 @@ insert = "bar"
 
 [keys.normal.space]
 t = ":run-shell-command eza --tree --level=3 --icons=always --group-directories-first --git-ignore"
+
+# No config way to add yazi support in Helix (by author: https://github.com/helix-editor/helix/discussions/12934#discussioncomment-12438498)
+[keys.normal.z]
+w = ":toggle soft-wrap.enable"
+
+[keys.normal]
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
