@@ -17,19 +17,21 @@ state() {
 
 status() {
   if [[ "$(state)" == "1" ]]; then
-    echo "lidwake: ON — system sleep is disabled"
+    echo "☕ lidwake: ON — system will stay awake (sleep disabled)"
   else
-    echo "lidwake: OFF — normal sleep is enabled"
+    echo "💤 lidwake: OFF — normal sleep is enabled"
   fi
 }
 
 enable() {
+  echo "☕ lidwake: enabling always-awake mode."
   echo "Warning: do not leave your running Mac inside a closed bag."
   sudo /usr/bin/pmset -a disablesleep 1
   status
 }
 
 disable() {
+  echo "💤 lidwake: disabling always-awake mode."
   sudo /usr/bin/pmset -a disablesleep 0
   status
 }
@@ -58,7 +60,7 @@ run_command() {
 
     if (( enabled_by_us )); then
       echo
-      echo "lidwake: restoring normal sleep…"
+      echo "💤 lidwake: restoring normal sleep…"
 
       if ! sudo -n /usr/bin/pmset -a disablesleep 0; then
         echo "Could not restore sleep automatically." >&2
@@ -87,8 +89,8 @@ run_command() {
 
   trap cleanup EXIT INT TERM HUP
 
-  echo "lidwake: running $*"
-  echo "Normal sleep will be restored when the command exits."
+  echo "☕ lidwake: running $*"
+  echo "☕ Normal sleep will be restored when the command exits."
   echo
 
   "$@"
