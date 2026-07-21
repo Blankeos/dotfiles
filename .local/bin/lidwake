@@ -1,0 +1,143 @@
+#!/bin/zsh
+
+set -u
+
+state() {
+  /usr/bin/pmset -g | /usr/bin/awk '
+    $1 == "SleepDisabled" {
+      print $2
+      found = 1
+      exit
+    }
+    END {
+      if (!found) print 0
+    }
+  '
+}
+
+status() {
+  if [[ "$(state)" == "1" ]]; then
+    echo "lidwake: ON — system sleep is disabled"
+  else
+    echo "lidwake: OFF — normal sleep is enabled"
+  fi
+}
+
+enable() {
+  echo "Warning: do not leave your running Mac inside a closed bag."
+  sudo /usr/bin/pmset -a disablesleep 1
+  status
+}
+
+disable() {
+  sudo /usr/bin/pmset -a disablesleep 0
+  status
+}
+
+run_command() {
+  if [[ "${1:-}" == "--" ]]; then
+    shift
+  fi
+
+  if (( $# == 0 )); then
+    echo "Usage: lidwake run -- <command> [arguments...]" >&2
+    exit 2
+  fi
+
+  local enabled_by_us=0
+  local keepalive_pid=""
+
+  cleanup() {
+    local exit_code=$?
+
+    trap - EXIT INT TERM HUP
+
+    if [[ -n "$keepalive_pid" ]]; then
+      kill "$keepalive_pid" 2>/dev/null
+    fi
+
+    if (( enabled_by_us )); then
+      echo
+      echo "lidwake: restoring normal sleep…"
+
+      if ! sudo -n /usr/bin/pmset -a disablesleep 0; then
+        echo "Could not restore sleep automatically." >&2
+        echo "Run: lidwake off" >&2
+      fi
+    fi
+
+    exit "$exit_code"
+  }
+
+  if [[ "$(state)" != "1" ]]; then
+    echo "Warning: do not leave your running Mac inside a closed bag."
+
+    sudo -v || exit 1
+    sudo /usr/bin/pmset -a disablesleep 1 || exit 1
+    enabled_by_us=1
+
+    # Keep sudo authentication alive for automatic cleanup.
+    while true; do
+      sudo -n true
+      sleep 45
+    done 2>/dev/null &
+
+    keepalive_pid=$!
+  fi
+
+  trap cleanup EXIT INT TERM HUP
+
+  echo "lidwake: running $*"
+  echo "Normal sleep will be restored when the command exits."
+  echo
+
+  "$@"
+}
+
+usage() {
+  cat <<'EOF'
+Usage:
+  lidwake on
+  lidwake off
+  lidwake status
+  lidwake toggle
+  lidwake run -- <command> [arguments...]
+
+Examples:
+  lidwake on
+  lidwake run -- claude
+  lidwake run -- codex
+  lidwake off
+EOF
+}
+
+case "${1:-}" in
+  on)
+    enable
+    ;;
+  off)
+    disable
+    ;;
+  status)
+    status
+    ;;
+  toggle)
+    if [[ "$(state)" == "1" ]]; then
+      disable
+    else
+      enable
+    fi
+    ;;
+  run)
+    shift
+    run_command "$@"
+    ;;
+  help|-h|--help|"")
+    usage
+    ;;
+  *)
+    echo "Unknown command: $1" >&2
+    usage >&2
+    exit 2
+    ;;
+esac
