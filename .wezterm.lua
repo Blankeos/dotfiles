@@ -34,6 +34,22 @@ config.keys = {
         mods = "OPT",
         action = wezterm.action.SendKey({ key = "f", mods = "ALT" }),
     },
+    -- CMD-Left/Right: beginning/end of line; CMD-Backspace: delete to beginning
+    {
+        key = "LeftArrow",
+        mods = "CMD",
+        action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
+    },
+    {
+        key = "RightArrow",
+        mods = "CMD",
+        action = wezterm.action.SendKey({ key = "e", mods = "CTRL" }),
+    },
+    {
+        key = "Backspace",
+        mods = "CMD",
+        action = wezterm.action.SendKey({ key = "u", mods = "CTRL" }),
+    },
 
     -- TMux Style
     {

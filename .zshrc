@@ -103,6 +103,9 @@ eval "$(starship init zsh)"
 # USER CONFIGURATION
 # ==============================================================================
 
+# CMD-Backspace in WezTerm sends Ctrl-U; delete to start of line (not whole line)
+bindkey '^U' backward-kill-line
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
