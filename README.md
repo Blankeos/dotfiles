@@ -325,9 +325,8 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Medis - Redis exploration in my GUI. `brew install --cask medis`
 - [x] Yaak - Postman/Bruno alternative (git-based), better, prefer for big projects. `brew install --cask yaak`
 - [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
-- [ ] ~Muxy~ - `brew install --cask muxy-app/tap/muxy`
-- [ ] ~herdr~ - `curl -fsSL https://herdr.dev/install.sh | sh` - tmux for agents
-- [ ] Tailscale - `brew install tailscale`
+- [x] herdr - `curl -fsSL https://herdr.dev/install.sh | sh` - tmux for agents
+- [x] Tailscale - `brew install tailscale`
 
 </details>
 
@@ -348,8 +347,9 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Tuitube - `curl -sf https://termcast.app/r/tuitube | bash` + `brew install yt-dlp ffmpeg`
 - [x] Recordly - recordly.dev
 - [x] Kondor - Install from [kondor](https://github.com/blankeos/kondor) w/ cargo install. Easy storage clearance for devs (I forked it).
-- [ ] ~Shottr - `brew install --caks shottr` (best screenshot app) - starting to use less.~
-- [ ] ~Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)~
+- [ ] ~~Shottr - `brew install --caks shottr` (best screenshot app) - starting to use less.~~
+- [ ] ~~Clop - https://lowtechguys.com/clop/ (Cool software from lowtechguys, might use)~~
+- [x] [FluidVoice](https://altic.dev/fluid) - `brew install --cask fluidvoice` - Very cool on-device voice with enrichment
 
 <!-- - [x] Bruno - API Testing - `brew install --cask bruno` -->
 
