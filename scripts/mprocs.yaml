@@ -3,8 +3,6 @@ procs:
     shell: uv self update
   opencode:
     shell: brew upgrade anomalyco/tap/opencode
-  grok:
-    shell: grok update
   rustup:
     shell: rustup upgrade
   bun:
@@ -23,6 +21,8 @@ procs:
     shell: brew upgrade zoxide
   eza:
     shell: brew upgrade eza
+  gh:
+    shell: brew upgrade gh
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
@@ -38,3 +38,5 @@ procs:
     shell: cargo binstall --no-confirm uplate
   crabenv:
     shell: cargo binstall --no-confirm crabenv
+  gittydocs:
+    shell: npm install -g gittydocs@latest

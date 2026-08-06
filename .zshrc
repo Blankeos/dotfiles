@@ -143,7 +143,6 @@ alias oc="opencode"
 alias cc="crabcode"
 alias claude="claude --permission-mode acceptEdits"
 
-alias uptools="$HOME/dotfiles/scripts/update-tools.sh"
 
 # ==============================================================================
 # Paths and Plugins
