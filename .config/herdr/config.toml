@@ -2,13 +2,12 @@ onboarding = false
 
 [theme]
 name = "vesper"
-
 auto_switch = false
-[ui]
-agent_panel_scope = "all"
 
+[ui]
 show_agent_labels_on_pane_borders = true
 
+agent_panel_sort = "spaces"
 [ui.toast]
 delivery = "system"
 

@@ -1,9 +1,13 @@
 os:
-  open: "zed {{filename}}"
-  edit: "zed {{filename}}"
-  editAtLine: "zed {{filename}}:{{line}}:{{column}}"
-  editAtLineAndWait: "zed {{filename}}:{{line}}:{{column}} --wait"
-  openDirInEditor: "zed {{filename}}"
+  # Helix: lazygitrs suspends TUI → hx → restores (editPreset fills edit*).
+  editPreset: "helix"
+  open: "hx {{filename}}"
+  # Zed (previous):
+  # open: "zed {{filename}}"
+  # edit: "zed {{filename}}"
+  # editAtLine: "zed {{filename}}:{{line}}:{{column}}"
+  # editAtLineAndWait: "zed {{filename}}:{{line}}:{{column}} --wait"
+  # openDirInEditor: "zed {{filename}}"
 gui:
   switchTabsWithPanelJumpKeys: true
   theme:
@@ -11,15 +15,15 @@ gui:
       - reverse
 git:
   commit:
-    generateCommand: "crabcode -p 'Examine the added-to-staging diff. Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model openai/gpt-5.3-codex-spark"
+    generateCommand: "crabcode -p 'Examine the added-to-staging diff. Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary. No co-authors. Dont run git commands.' --no-session-persistence --model crof/deepseek-v4-flash-0731 --reasoning-effort low"
     # generateCommand: "claude -p 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model claude-haiku-4-5"
     # generateCommand: "opencode run --model opencode-go/deepseek-v4-flash 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.'"
   log:
     showGraph: always
     showWholeGraph: true
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never --syntax-theme base16-256 -s
+      command: delta --dark --paging=never --syntax-theme base16-256 -s
 customCommands:
   - key: "G"
     command: "gh pr view -w {{.SelectedLocalBranch.Name}} || gh repo view -w"
@@ -60,24 +64,41 @@ customCommands:
         context: "localBranches"
         description: "Copy PR creation URL for selected branch"
   - key: "O"
-    description: "Custom open: git show to temp and zed"
+    description: "Custom open: git show to temp and helix"
     commandMenu:
       - key: "o"
-        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show HEAD:{{.SelectedFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show HEAD:{{.SelectedFile.Name}} > "$open_dest" && hx "$open_dest"'
         context: "files"
-        description: "Open old file content in zed (HEAD) (left diff)"
+        description: "Open old file content in helix (HEAD) (left diff)"
       - key: "o"
-        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > "$open_dest" && hx "$open_dest"'
         context: "commitFiles"
-        description: "Open old file content in zed (left diff)"
+        description: "Open old file content in helix (left diff)"
       - key: "c"
-        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && hx "$open_dest"'
         context: "commitFiles"
-        description: "Open file content from this commit in zed (right diff)"
+        description: "Open file content from this commit in helix (right diff)"
       - key: "h"
-        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --diff "$open_dest" "{{.SelectedCommitFile.Name}}"'
+        command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && hx "$open_dest" "{{.SelectedCommitFile.Name}}"'
         context: "commitFiles"
-        description: "Compare file content with HEAD in zed (Note: only works if same name)"
+        description: "Open commit + working tree versions in helix (side buffers)"
+      # Zed (previous):
+      # - key: "o"
+      #   command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show HEAD:{{.SelectedFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+      #   context: "files"
+      #   description: "Open old file content in zed (HEAD) (left diff)"
+      # - key: "o"
+      #   command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}^:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+      #   context: "commitFiles"
+      #   description: "Open old file content in zed (left diff)"
+      # - key: "c"
+      #   command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --wait "$open_dest"'
+      #   context: "commitFiles"
+      #   description: "Open file content from this commit in zed (right diff)"
+      # - key: "h"
+      #   command: 'open_dest="/tmp/lazy/{{.SelectedCommit.Sha}}_{{.SelectedCommitFile.Name}}" && mkdir -p "$(dirname "$open_dest")" && git show {{.SelectedCommit.Sha}}:{{.SelectedCommitFile.Name}} > "$open_dest" && zed --diff "$open_dest" "{{.SelectedCommitFile.Name}}"'
+      #   context: "commitFiles"
+      #   description: "Compare file content with HEAD in zed (Note: only works if same name)"
     # With sample with and suggestions
     # - key: "<c-p>"
     #   description: "Pull from a specific remote repository"
