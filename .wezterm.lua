@@ -16,8 +16,10 @@ config.colors = {
     selection_bg = "rgba(96, 165, 250, 0.4)",
 }
 config.max_fps = 120
-config.enable_kitty_keyboard = true
 
+-- This wasn't helpful actually...
+-- config.enable_kitty_keyboard = false
+ 
 config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
     -- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
