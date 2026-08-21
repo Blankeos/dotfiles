@@ -117,6 +117,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
     ⭐️ MacOS Improvements
   </summary>
 
+- [x] Better drag with trackpad on **Accessibility** > **Pointer Control** > **Trackpad Options** > Three-finger drag
 - [x] Better Backspace on **Terminal** > **Settings** > **Profile** > **Keyboard** > ✅ Use Option as Meta key. (Less used, just use Wezterm)
 - [x] Better Backspace on **iTerm2** > **Settings** > **Profile** > **Keys** > **Left Option Key** > ✅ Esc+ (Less used, just use Wezterm)
 - [x] Keyboard accessible Native Dialogs > **Settings** > **Keyboard** > **Keyboard Shortcuts** > ✅ Change the way Tab moves focus. Then press Ctrl + Fn + F7.

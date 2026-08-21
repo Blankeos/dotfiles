@@ -8,3 +8,5 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 Ask the questions one at a time.
 
 If a question can be answered by exploring the codebase, explore the codebase instead.
+
+At every question give a x/10 ready-to-implement rating so I know how many more questions you'll ask. `<Question>? - Score: x/10`

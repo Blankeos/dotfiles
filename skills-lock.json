@@ -1,11 +1,29 @@
 {
   "version": 1,
   "skills": {
+    "before-and-after": {
+      "source": "vercel-labs/before-and-after",
+      "sourceType": "github",
+      "skillPath": "skill/SKILL.md",
+      "computedHash": "2ddadc58c8b916f8b253542c4c3ae0057e35530914c0d7627a0e10b89accaef5"
+    },
+    "browser-control": {
+      "source": "anomalyco/browser-control",
+      "sourceType": "github",
+      "skillPath": "skills/browser-control/SKILL.md",
+      "computedHash": "f926e12abde87f2c0079f27da5f9b85c32b2ab3b0591048834ac28a6469df713"
+    },
     "design-taste-frontend": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
       "skillPath": "skills/taste-skill/SKILL.md",
       "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e"
+    },
+    "diagram-design": {
+      "source": "cathrynlavery/diagram-design",
+      "sourceType": "github",
+      "skillPath": "skills/diagram-design/SKILL.md",
+      "computedHash": "e9c4feb16e91d263c2983f73889f0f047913ba8abfd55947450193f8ce6fe364"
     },
     "gpt-taste": {
       "source": "Leonxlnx/taste-skill",

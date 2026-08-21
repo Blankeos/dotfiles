@@ -1,3 +1,18 @@
+# Sidebar mode: current dir only (no parent / preview)
 [mgr]
 ratio = [0, 1, 0]
 show_hidden = true
+
+[opener]
+edit = [
+  { run = 'hx "$@"', desc = "Open in helix", block = true, for = "unix" },
+]
+
+[open]
+rules = [
+  { url = "*/", use = [] },
+  { mime = "text/*", use = "edit" },
+  { mime = "application/json", use = "edit" },
+  { mime = "inode/x-empty", use = "edit" },
+  { url = "*", use = "edit" },
+]
