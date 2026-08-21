@@ -29,8 +29,16 @@
   "vim": { "toggle_relative_line_numbers": true },
 
   // 🎨 Aesthetics
-  "theme": "Blankeos Zen Dark",
-  "icon_theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Blankeos Zen Dark",
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
   // Theme Overrides
   // "experimental.theme_overrides": {
   //   "background.appearance": "transparent"
@@ -48,7 +56,7 @@
     "git_status": true,
   },
   "buffer_font_size": 12.0,
-  "ui_font_size": 16,
+  "ui_font_size": 17,
   "ui_font_family": "BlexMono Nerd Font",
   "markdown_preview_font_family": ".ZedSans",
   "buffer_font_family": "BlexMono Nerd Font",
@@ -60,6 +68,12 @@
         "model": ["ollama-cloud/kimi-k2.6:cloud"],
       },
       "type": "registry",
+    },
+    "Crabcode": {
+      "type": "custom",
+      "command": "crabcode",
+      "args": ["acp"],
+      "env": {},
     },
     "claude-acp": {
       "favorite_config_option_values": {
@@ -130,6 +144,7 @@
     "option_as_meta": true,
   },
   // 🇵🇭 LSP
+
   "file_types": {
     "JSONC": ["code-snippets", "prettierrc"],
     "HTML": ["*.json.tera"],
@@ -163,12 +178,12 @@
       },
     },
     "TypeScript": {
-      "language_servers": [
-        "tsgo",
-        "!vtsls",
-        "!typescript-language-server",
-        "...",
-      ],
+      // "language_servers": [
+      //   "tsgo",
+      //   "!vtsls",
+      //   "!typescript-language-server",
+      //   "...",
+      // ],
       "use_on_type_format": false,
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
@@ -177,12 +192,12 @@
       },
     },
     "TSX": {
-      "language_servers": [
-        "tsgo",
-        "!vtsls",
-        "!typescript-language-server",
-        "...",
-      ],
+      // "language_servers": [
+      //   "tsgo",
+      //   "!vtsls",
+      //   "!typescript-language-server",
+      //   "...",
+      // ],
       "use_on_type_format": false,
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
@@ -237,6 +252,13 @@
   },
   // "lsp_document_colors": "background", // Enable if you want the color to be the bg of the string
   "lsp": {
+    // I got this from a Twitter and Reddit post: https://www.reddit.com/r/ZedEditor/comments/1uwdbyx/typescript_7_support/
+    "vtsls": {
+      "binary": {
+        "path": "node_modules/.bin/tsc",
+        "arguments": ["--lsp", "--stdio"],
+      },
+    },
     // https://github.com/zed-industries/zed/issues/22445#issuecomment-2571318408
     "tailwindcss-language-server": {
       "settings": {
