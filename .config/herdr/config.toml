@@ -11,6 +11,3 @@ agent_panel_sort = "spaces"
 [ui.toast]
 delivery = "system"
 
-[keys]
-previous_tab = "alt+["
-next_tab = "alt+]"
