@@ -24,9 +24,26 @@
     },
   },
 
-  "small_model": "opencode/deepseek-v4-flash-free",
+  // "small_model": "opencode/deepseek-v4-flash-free",
+  "small_model": "crof/deepseek-v4-flash-0731",
+  
+  
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    }
+  },
 
   "agent": {
+    "orchestrator": {
+      "mode": "primary",
+      "prompt": "Never run glob/grep/read yourself; delegate all exploration to @explore. Your context is the expensive resource.",
+    },
     // --- START: Magnitude-style orchestrator ---
     // "magnitude": {
     //   "mode": "primary",
@@ -43,22 +60,26 @@
     //     "vlm-agent": "allow",
     //   },
     // },
-
-    // "explore": {
-    //   "mode": "subagent",
-    //   // "description": "Fast read-only codebase scout. Use for context gathering before planning or implementation — not for writing code.",
-    //   "model": "commandcode/deepseek/deepseek-v4-flash",
-    //   // "reasoningEffort": null,
-    //   // "max_steps": 12,
-    //   // "tools": ["glob", "grep", "list", "read", "webfetch"],
-    //   // "permission": {
-    //   //   "edit": "deny",
-    //   //   "write": "deny",
-    //   //   "bash": "deny",
-    //   // },
-    //   // "prompt": "You are a fast scout. Given the parent task, scan the repo efficiently (glob/grep/read/list). Return: relevant paths, architecture notes, and short code excerpts with file:line. No edits. Be dense and actionable for the lead agent.",
-    // },
-
+    "explore": {
+      "mode": "subagent",
+      // "description": "Fast read-only codebase scout. Use for context gathering before planning or implementation — not for writing code. Targeted search only, answer exactly what's asked, concise summary and do not broaden scope and over-explore",
+      // "model": "opencode/deepseek-v4-flash-free",
+      // "model": "opencode/deepseek-v4-flash-free",
+      // "model": "vercel/deepseek/deepseek-v4-flash-0731",
+      // "model": "crof/deepseek-v4-flash",
+      "model": "xai/grok-4.6",
+      "reasoningEffort": "low",
+      // "model": "xai/grok-composer-2.5-fast",
+      // "model": "xai/grok-4.5",
+      // "max_steps": 12,
+      // "tools": ["glob", "grep", "list", "read", "webfetch"],
+      // "permission": {
+      //   "edit": "deny",
+      //   "write": "deny",
+      //   "bash": "deny",
+      // },
+      // "prompt": "You are a fast scout. Given the parent task, scan the repo efficiently (glob/grep/read/list). Return: relevant paths, architecture notes, and short code excerpts with file:line. No edits. Be dense and actionable for the lead agent.",
+    },
     // "architect": {
     //   "mode": "subagent",
     //   "description": "Planning specialist. Turns scout/explore output into a concrete, step-by-step implementation plan with files to touch and risks.",
@@ -73,7 +94,6 @@
     //   },
     //   "prompt": "You are the architect. Produce a clear implementation plan: goal, approach, ordered steps, files/modules, test/verification steps, and parallelizable chunks. You may read the codebase and use update_plan. Do not edit source files. End with a concise plan the user can approve.",
     // },
-
     // "engineer": {
     //   "mode": "subagent",
     //   "description": "Implementation worker. Executes one focused slice of an approved plan with full coding tools.",
@@ -88,7 +108,6 @@
     //   },
     //   "prompt": "You are an engineer subagent. Implement exactly what the parent prompt specifies — one coherent slice of work. Follow repo conventions, run relevant checks when reasonable, and report what you changed with paths. Spawn scout/explore only if you lack context.",
     // },
-
     // "critic": {
     //   "mode": "subagent",
     //   "description": "Read-only reviewer. Checks implementation for bugs, slop, missing edge cases, and test gaps.",
@@ -103,22 +122,28 @@
     //   "prompt": "You are the critic. Review the work described in the parent prompt against the actual repo state. List findings by severity with file:line references. Suggest fixes but do not edit files. Note missing tests or verification.",
     // },
     // --- END: Magnitude-style orchestrator ---
-
-    "vlm-agent": {
-      "model": "commandcode/moonshotai/Kimi-K2.5",
-    },
-
-    "frontend-agent": {
+    // "vlm-agent": {
+    //   "model": "crof/greg-1-mini",
+    // },
+    "executor": {
       "mode": "subagent",
-      "description": "Fast frontend subagent",
-      "model": "xai/grok-composer-2.5-fast", // Fastest creative agent I think
-      // "model": "xai/grok-4.5", // Fastest creative agent I think
-      // "model": "zai-coding-plan/glm-5.2", // smartest open model rn
-      // "model": "commandcode/zai-org/glm-5.2", // Best quality frontend agent so far (even beats proprietary models as of June 19, 2026)
-      // "model": "commandcode/moonshotai/Kimi-K2.5",
-      "reasoningEffort": null,
-      "prompt": "You are an expert frontend developer specializing in modern UI/UX design. Perform frontend development tasks based on those descriptions or direct instructions.",
+      "model": "xai/grok-4.6", // Fastest creative agent I think is composer but this is a smarter one, fast
+      // "model": "crof/deepseek-v4-flash-0731", // fast cheap smart model
+      // "model": "vercel/meta/muse-spark-1.2-contributor", // smart model? super cheap
+      "prompt": "You are a specialized worker agent that performs the actual coding work based on the instructions provided by the orchestrator.",
+      "reasoningEffort": "high",
     },
+    // "frontend-agent": {
+    //   "mode": "subagent",
+    //   "description": "Fast frontend subagent",
+    //   "model": "xai/grok-composer-2.5-fast", // Fastest creative agent I think
+    //   // "model": "xai/grok-4.5", // Fastest creative agent I think
+    //   // "model": "zai-coding-plan/glm-5.2", // smartest open model rn
+    //   // "model": "commandcode/zai-org/glm-5.2", // Best quality frontend agent so far (even beats proprietary models as of June 19, 2026)
+    //   // "model": "commandcode/moonshotai/Kimi-K2.5",
+    //   "reasoningEffort": null,
+    //   "prompt": "You are an expert frontend developer specializing in modern UI/UX design. Perform frontend development tasks based on those descriptions or direct instructions.",
+    // },
   },
 
   // "default_agent": "magnitude",
