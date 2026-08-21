@@ -76,6 +76,15 @@ warning = "warning"
 info = "info"
 hint = "hint"
 
+# Git diff gutter
+"diff.plus" = "green"
+"diff.plus.gutter" = "green"
+"diff.minus" = "pink"
+"diff.minus.gutter" = "pink"
+"diff.delta" = "warning"
+"diff.delta.gutter" = "warning"
+"diff.delta.moved" = "info"
+
 [palette]
 background = "#121212"
 elevated = "#121212"
@@ -98,6 +107,7 @@ constant = "#e4f0fb"
 property = "#ffffff"
 cursor = "#bae6fd"
 pink = "#d0679d"
+green = "#5DE4C7"
 warning = "#fffac2"
 info = "#ADD7FF"
 hint = "#969696"
