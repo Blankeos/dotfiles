@@ -5,5 +5,7 @@ Can you review this PR/Branch w/ main and write it in `PR_REVIEW_{TIMESTAMP}.md`
 3. I want to see a X/5 merge confidence rating in the beginning.
 4. I want to see a small body description since I'll be commenting on github prs.
 5. Are there any regressions?
-6. Lastly... Does it need to do any migrations? Any checklists before I merge?
-7. If you can do the checks yourself, do it. As long as they don't mutate anything.
+6. Lastly... Does it need to do any migrations?
+7. Any checklists before I merge?
+8. Add a "confidence bumps" note. Explaining what would achieve a higher merge confidence score if a checklist item is accomplished. Show the new score too
+9. If you can do the checks yourself, do it. As long as they don't mutate anything.

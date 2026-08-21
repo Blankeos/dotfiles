@@ -37,4 +37,4 @@ Add a "Thanks <name> for <reason>" line on tickets where someone else was meanin
 
 After writing the file, ask me if there's anyone outside Linear (Slack / calls) I want to credit that the tools wouldn't have surfaced.
 
-For "status", use some colored circle emojis i.e. "Status: 🟢 Merged" or "Status: 🟡 In Progress", whatever's appropriate.
+For "status", use some colored circle emojis i.e. "Status: 🟢 Merged" or "Status: 🟡 In Progress", whatever's appropriate. ALWAYS.

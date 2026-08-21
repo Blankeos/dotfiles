@@ -14,7 +14,7 @@ Summarize what I did this week for our weekly standup update. Use the linear CLI
    linear issue mine --all-states --updated-after <date 7 days ago YYYY-MM-DD> --sort priority --team <KEY> --no-pager
    ```
 3. Cross-reference with `git log --author="<my git name>" --since="<7 days ago>" --pretty=format:"%h %s"` so I don't miss small commits that didn't have tickets.
-4. For each completed ticket, run `linear issue view <ID>` to read the description, comments, and PR links — that's where the "why" and discoveries live. Note collaborators in the comments (especially non-product-team people like etc.) so I can thank them.
+4. For each completed ticket, run `linear issue view <ID>` to read the description, comments, and PR links — that's where the "why" and discoveries live. Note collaborators in the comments, so I can thank them.
 
 ## Format
 
@@ -23,10 +23,10 @@ Plain bullets — no `##` headings, no numbered list, no emojis (looks unprofess
 ```
 # Weekly Update — YYYY-MM-DD
 
-- Pulse
+- Product 1
   - **[WEB-XXXX](link)** — Short description of what shipped, lead with the outcome not the ticket title. Add a sentence on discoveries / why / what was tricky if relevant. Status (Merged / Done / Closed). _Thanks <name> for <reason>._ if anyone else was involved.
   - ...
-- Supermemo
+- Product 2
   - ...
 - <Other product if applicable>
   - ...
@@ -42,3 +42,5 @@ Human standup voice — short sentences, casual but specific. Lead with what shi
 Add a "Thanks <name> for <reason>" line on tickets where someone else was meaningfully involved — bug reporter (like thanks for reporting), infra setup, code review pairing. Skip the thanks line when it was solo work.
 
 After writing the file, ask me if there's anyone outside Linear (Slack / calls) I want to credit that the tools wouldn't have surfaced.
+
+For "status", use some colored circle emojis i.e. "Status: 🟢 Merged" or "Status: 🟡 In Progress", whatever's appropriate. ALWAYS.
