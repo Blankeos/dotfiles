@@ -9,4 +9,4 @@ Ask the questions one at a time.
 
 If a question can be answered by exploring the codebase, explore the codebase instead.
 
-At every question give a x/10 ready-to-implement rating so I know how many more questions you'll ask. `<Question>? - Score: x/10`
+Every question (including the first) must end with a ready-to-implement score in the question text itself: `<Question>? - Score: x/10`

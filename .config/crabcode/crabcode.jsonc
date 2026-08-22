@@ -67,7 +67,8 @@
       // "model": "opencode/deepseek-v4-flash-free",
       // "model": "vercel/deepseek/deepseek-v4-flash-0731",
       // "model": "crof/deepseek-v4-flash",
-      "model": "xai/grok-4.6",
+      // "model": "xai/grok-4.6",
+      "model": "zai-coding-plan/glm-5.2",
       "reasoningEffort": "low",
       // "model": "xai/grok-composer-2.5-fast",
       // "model": "xai/grok-4.5",
@@ -127,7 +128,8 @@
     // },
     "executor": {
       "mode": "subagent",
-      "model": "xai/grok-4.6", // Fastest creative agent I think is composer but this is a smarter one, fast
+      "model": "zai-coding-plan/glm-5.3",
+      "model": "xai/grok-4.6",
       // "model": "crof/deepseek-v4-flash-0731", // fast cheap smart model
       // "model": "vercel/meta/muse-spark-1.2-contributor", // smart model? super cheap
       "prompt": "You are a specialized worker agent that performs the actual coding work based on the instructions provided by the orchestrator.",
