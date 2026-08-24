@@ -41,4 +41,5 @@ procs:
   gittydocs:
     shell: npm install -g gittydocs@latest
   herdr-serve:
-    shell: brew upgrade blankeos/tap/herdr-serve
+    shell: go install github.com/Blankeos/herdr-serve/cmd/herdr-serve@latest
+
