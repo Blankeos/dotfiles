@@ -9,7 +9,7 @@ enable = false
 
 [editor.file-picker]
 hidden = false
-git-ignore = false
+git-ignore = true
 
 [editor.cursor-shape]
 normal = "block"
