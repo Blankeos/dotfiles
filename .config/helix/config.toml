@@ -31,3 +31,8 @@ C-y = [
 # Open lazygitrs w/ ctrl-g
 "C-g" = [":new", ":insert-output lazygitrs", ":buffer-close!", ":redraw"]
 
+# Preview markdown in browser (gh extension: yusukebe/gh-markdown-preview)
+# Kills any prior preview first so you don't leave orphan servers on :3333
+[keys.normal.space]
+m = ":sh pkill -f 'gh-markdown-preview|gh markdown-preview' 2>/dev/null; gh markdown-preview %{buffer_name} --dark-mode >/dev/null 2>&1 &"
+
