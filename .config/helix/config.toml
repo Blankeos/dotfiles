@@ -19,7 +19,15 @@ insert = "bar"
 [keys.normal.z]
 w = ":toggle soft-wrap.enable"
 
-# space-e → toggle yazi sidebar (tmux)
-# [keys.normal.space]
-# e = ":sh hy-sidebar"
+[keys.normal]
+# Open yazi w/ ctrl-y (https://github.com/helix-editor/helix/discussions/12934)
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+# Open lazygitrs w/ ctrl-g
+"C-g" = [":new", ":insert-output lazygitrs", ":buffer-close!", ":redraw"]
 
