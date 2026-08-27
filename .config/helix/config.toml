@@ -35,4 +35,11 @@ C-y = [
 # Kills any prior preview first so you don't leave orphan servers on :3333
 [keys.normal.space]
 m = ":sh pkill -f 'gh-markdown-preview|gh markdown-preview' 2>/dev/null; gh markdown-preview %{buffer_name} --dark-mode >/dev/null 2>&1 &"
+# Yank path menu (space Y …). Single :sh so which-key shows the raw command.
+# (space y stays Helix's default yank-to-clipboard)
+[keys.normal.space.Y]
+p = ":sh printf '%%s' '%{buffer_name}' | pbcopy"
+a = ":sh printf '%%s' '%{file_path_absolute}' | pbcopy"
+n = ":sh printf '%%s' \"$(basename '%{buffer_name}')\" | pbcopy"
+l = ":sh printf '%%s' '%{buffer_name}:%{cursor_line}' | pbcopy"
 

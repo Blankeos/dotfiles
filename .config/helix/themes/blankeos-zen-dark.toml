@@ -48,11 +48,13 @@ variable = { fg = "constant", modifiers = ["italic"] }
 "variable.other.member" = { fg = "property" }
 type = { fg = "type" }
 "type.builtin" = { fg = "type" }
-constructor = { fg = "accent" }
+# PascalCase ids (RemoteClient, etc.) — white like Zed, not accent blue
+constructor = { fg = "property" }
 function = { fg = "function" }
 "function.builtin" = { fg = "function" }
 "function.macro" = { fg = "accent" }
 tag = { fg = "accent" }
+"tag.component" = { fg = "property" }
 comment = { fg = "muted-comment", modifiers = ["italic"] }
 constant = { fg = "constant" }
 "constant.builtin" = { fg = "pink" }
@@ -84,6 +86,9 @@ hint = "hint"
 "diff.delta" = "warning"
 "diff.delta.gutter" = "warning"
 "diff.delta.moved" = "info"
+
+# Rainbow brackets — theme blues/teals/pinks (not Helix's default primaries)
+rainbow = ["pink", "warning", "green", "accent", "info", "label", "function", "cursor"]
 
 [palette]
 background = "#121212"
