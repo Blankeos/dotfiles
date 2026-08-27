@@ -23,6 +23,8 @@ procs:
     shell: brew upgrade eza
   gh:
     shell: brew upgrade gh
+  yt-dlp:
+    shell: brew upgrade yt-dlp
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs

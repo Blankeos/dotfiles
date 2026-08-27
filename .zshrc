@@ -111,12 +111,9 @@ bindkey '^U' backward-kill-line
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor
+# export EDITOR='hx'
+# export VISUAL='hx'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -209,3 +206,5 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+source /Users/carlo/.config/broot/launcher/bash/br
