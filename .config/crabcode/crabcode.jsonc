@@ -2,6 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/blankeos/crabcode/main/crabcode.schema.json",
   // Crabcode theme id (see src/generated_themes/carbonfox.json)
   // "theme": "carbonfox",
+  "websearch": {
+    // "provider": "firecrawl-hosted-mcp",
+    // "native": { "web": true }
+  },
 
   "notifications": {
     "complete": {
@@ -26,17 +30,16 @@
 
   // "small_model": "opencode/deepseek-v4-flash-free",
   "small_model": "crof/deepseek-v4-flash-0731",
-  
-  
+
   "mcp": {
     "context7": {
       "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
+      "url": "https://mcp.context7.com/mcp",
     },
     "gh_grep": {
       "type": "remote",
-      "url": "https://mcp.grep.app"
-    }
+      "url": "https://mcp.grep.app",
+    },
   },
 
   "agent": {
@@ -68,7 +71,7 @@
       // "model": "vercel/deepseek/deepseek-v4-flash-0731",
       // "model": "crof/deepseek-v4-flash",
       // "model": "xai/grok-4.6",
-      "model": "zai-coding-plan/glm-5.2",
+      "model": "zai-coding-plan/glm-5.3-flash",
       "reasoningEffort": "low",
       // "model": "xai/grok-composer-2.5-fast",
       // "model": "xai/grok-4.5",
@@ -128,7 +131,7 @@
     // },
     "executor": {
       "mode": "subagent",
-      "model": "zai-coding-plan/glm-5.3",
+      // "model": "zai-coding-plan/glm-5.3",
       "model": "xai/grok-4.6",
       // "model": "crof/deepseek-v4-flash-0731", // fast cheap smart model
       // "model": "vercel/meta/muse-spark-1.2-contributor", // smart model? super cheap
