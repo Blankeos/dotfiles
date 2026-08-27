@@ -1,7 +1,7 @@
 os:
   # Helix: lazygitrs suspends TUI → hx → restores (editPreset fills edit*).
   editPreset: "helix"
-  open: "hx {{filename}}"
+  # open: "hx {{filename}}"
   # Zed (previous):
   # open: "zed {{filename}}"
   # edit: "zed {{filename}}"
@@ -15,7 +15,7 @@ gui:
       - reverse
 git:
   commit:
-    generateCommand: "crabcode -p 'Examine the added-to-staging diff. Only respond with a conventional commit message for this diff. No preamble. No thoughts. Add a description/body if necessary. No co-authors. Dont run git commands.' --no-session-persistence --model crof/deepseek-v4-flash --reasoning-effort low"
+    generateCommand: "crabcode -p 'Examine the added-to-staging diff. Only respond with a conventional commit message for this diff. No preamble. No thoughts. Add a description/body if necessary. No co-authors. Dont run git commands. Formatting: do not hard-wrap or column-wrap lines; use real newlines only for paragraph breaks and for each bullet on its own line (example: - item). Soft wrapping is handled by the editor.' --no-session-persistence --model crof/deepseek-v4-flash --reasoning-effort low"
     # generateCommand: "claude -p 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.' --no-session-persistence --model claude-haiku-4-5"
     # generateCommand: "opencode run --model opencode-go/deepseek-v4-flash 'Only generate a conventional commit message for this diff. No preamble outside the commit message. Add a description/body if necessary.'"
   log:
