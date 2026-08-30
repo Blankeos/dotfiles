@@ -7,6 +7,11 @@
     // "native": { "web": true }
   },
 
+  // Herdr: each click opens a new tab running Helix
+  "editor": {
+    "open": "herdr pane run \"$(herdr tab create --focus --label hx | jq -r .result.root_pane.pane_id)\" hx -- {pathname}:{line}:{column}",
+  },
+
   "notifications": {
     "complete": {
       "terminal": "auto",
@@ -40,7 +45,16 @@
       "type": "remote",
       "url": "https://mcp.grep.app",
     },
+    "cua-driver": {
+      "type": "local",
+      "command": ["/Users/carlo/.local/bin/cua-driver", "mcp"],
+    },
+    "doop": {
+      "type": "remote",
+      "url": "https://doop.design/mcp",
+    },
   },
+
 
   "agent": {
     "orchestrator": {

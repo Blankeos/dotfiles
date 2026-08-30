@@ -112,7 +112,7 @@ bindkey '^U' backward-kill-line
 # export LANG=en_US.UTF-8
 
 # Preferred editor
-# export EDITOR='hx'
+export EDITOR='hx'
 # export VISUAL='hx'
 
 # Compilation flags
@@ -207,4 +207,7 @@ fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
 
-source /Users/carlo/.config/broot/launcher/bash/br
+# >>> crabcode installer >>>
+fpath=(~/.local/share/zsh/site-functions $fpath)
+(( $+functions[compdef] )) && autoload -Uz _crabcode && compdef _crabcode crabcode cc
+# <<< crabcode installer <<<
