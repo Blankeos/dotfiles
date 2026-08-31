@@ -139,6 +139,7 @@ alias lg="lazygitrs"
 alias oc="opencode"
 alias cc="crabcode"
 alias claude="claude --permission-mode acceptEdits"
+alias br="broot"
 
 
 # ==============================================================================

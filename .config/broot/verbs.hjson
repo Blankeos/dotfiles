@@ -33,6 +33,59 @@ verbs: [
         leave_broot: false
     }
 
+    # Copy the selected path to the clipboard (macOS pbcopy, no trailing newline)
+    {
+        invocation: copy_absolutepath
+        shortcut: cap
+        shell_command: "printf %s {file} | pbcopy"
+        leave_broot: false
+        refresh_after: false
+    }
+    {
+        invocation: copy_relativepath
+        shortcut: crp
+        shell_command: "printf %s {file-root-relative} | pbcopy"
+        leave_broot: false
+        refresh_after: false
+    }
+    {
+        invocation: copy_filename
+        shortcut: cfn
+        shell_command: "printf %s {file-name} | pbcopy"
+        leave_broot: false
+        refresh_after: false
+    }
+    # Copy the parent directory path (like yazi's `copy dirname`)
+    {
+        invocation: copy_dirname
+        shortcut: cdn
+        shell_command: "printf %s {parent} | pbcopy"
+        leave_broot: false
+        refresh_after: false
+    }
+
+    # Run a shell command with the selection as the last argument
+    # :sh wc -l          →  wc -l /abs/path
+    # :shr cat           →  cat path/relative/to/tree-root
+    # :shn file          →  file filename.ext  (cwd = parent dir)
+    {
+        invocation: "sh {cmd}"
+        shell_command: "{cmd} {file}"
+        leave_broot: false
+    }
+    {
+        invocation: "shr {cmd}"
+        shell_command: "{cmd} {file-root-relative}"
+        working_dir: "{root}"
+        leave_broot: false
+    }
+    {
+        invocation: "shn {cmd}"
+        shell_command: "{cmd} {file-name}"
+        working_dir: "{directory}"
+        leave_broot: false
+    }
+
     # Example 1: launching `tail -n` on the selected file (leaving broot)
     # {
     #     name: tail_lines
