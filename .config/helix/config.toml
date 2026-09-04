@@ -31,10 +31,9 @@ C-y = [
 # Open lazygitrs w/ ctrl-g
 "C-g" = [":new", ":insert-output lazygitrs", ":buffer-close!", ":redraw"]
 
-# Preview markdown in browser (gh extension: yusukebe/gh-markdown-preview)
-# Kills any prior preview first so you don't leave orphan servers on :3333
+# Preview markdown in crabmd (GPUI app)
 [keys.normal.space]
-m = ":sh pkill -f 'gh-markdown-preview|gh markdown-preview' 2>/dev/null; gh markdown-preview %{buffer_name} --dark-mode >/dev/null 2>&1 &"
+m = ':sh crabmd "%{buffer_name}:%{cursor_line}:%{cursor_column}" >/dev/null 2>&1 &'
 # Yank path menu (space Y …). Single :sh so which-key shows the raw command.
 # (space y stays Helix's default yank-to-clipboard)
 [keys.normal.space.Y]
