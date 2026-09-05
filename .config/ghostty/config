@@ -1,0 +1,6 @@
+font-family = "JetBrainsMono Nerd Font Propo"
+font-size = 13
+background = #121212
+background-opacity = 0.90
+background-blur = 13
+macos-titlebar-style = tabs
