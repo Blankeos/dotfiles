@@ -17,8 +17,12 @@ config.colors = {
 }
 config.max_fps = 120
 
--- This wasn't helpful actually...
--- config.enable_kitty_keyboard = false
+-- Kitty keyboard: sends disambiguated ESC so TUIs (helix, lazygit,
+-- crabcode) don't wait to tell lone ESC apart from Alt+key. Enabled
+-- 2026-09-05 after updating to nightly (stable 20240203 had the
+-- double/hold-ESC kitty bug). If ESC still misbehaves through
+-- wezterm -> herdr, flip back to false.
+config.enable_kitty_keyboard = true
  
 config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
@@ -36,7 +40,11 @@ config.keys = {
         mods = "OPT",
         action = wezterm.action.SendKey({ key = "f", mods = "ALT" }),
     },
-    -- CMD-Left/Right: beginning/end of line; CMD-Backspace: delete to beginning
+    -- CMD-Left/Right: beginning/end of line; CMD-Backspace: delete to beginning.
+    -- Implemented as CTRL-A / CTRL-E / CTRL-U: readline (Emacs) line-editing
+    -- keys understood by bash, zsh, and most TUIs. This translates macOS GUI
+    -- muscle-memory (Cmd jumps to line edge) into sequences shells already
+    -- understand, so it works over SSH and inside tmux/mprocs too.
     {
         key = "LeftArrow",
         mods = "CMD",
@@ -51,6 +59,21 @@ config.keys = {
         key = "Backspace",
         mods = "CMD",
         action = wezterm.action.SendKey({ key = "u", mods = "CTRL" }),
+    },
+    -- CMD-SHIFT-Left/Right: select to beginning/end of line.
+    -- Not a terminal standard; Shift+Home/End is the closest widely-supported
+    -- convention (xterm/Windows/Linux). Needed because CTRL-A/E above are
+    -- single chars and can't carry SHIFT in legacy encoding, so CMD|SHIFT
+    -- would otherwise arrive stripped as plain Shift+Arrow (one-char select).
+    {
+        key = "LeftArrow",
+        mods = "CMD|SHIFT",
+        action = wezterm.action.SendKey({ key = "Home", mods = "SHIFT" }),
+    },
+    {
+        key = "RightArrow",
+        mods = "CMD|SHIFT",
+        action = wezterm.action.SendKey({ key = "End", mods = "SHIFT" }),
     },
 
     -- TMux Style

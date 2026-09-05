@@ -25,6 +25,8 @@ procs:
     shell: brew upgrade gh
   yt-dlp:
     shell: brew upgrade yt-dlp
+  wezterm:
+    shell: brew upgrade --cask wezterm
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
