@@ -4,3 +4,8 @@ background = #121212
 background-opacity = 0.90
 background-blur = 13
 macos-titlebar-style = tabs
+custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/ripple_cursor.glsl
+custom-shader-animation = always
+ macos-icon = blueprint
+keybind = alt+backspace=text:\x1b\x7f
