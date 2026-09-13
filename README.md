@@ -130,31 +130,31 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   - Check `~/Library/LaunchAgents` and `/Library/LaunchDaemons` for leftover launchd plists
   - Check `~/Library/Application Support/<package>` for leftover configs
   - Check `~/Library/Preferences/<package>.plist` for leftover preferences
-
 - [x] Better Window management Install [Rectangle](https://rectangleapp.com/) - For window management
 
   ```sh
   brew install --cask rectangle
   ```
 
-- [x] Better Spotlight. Install [Raycast](http://raycast.com)
+- [x] Better Spotlight. Install [Tinycast](https://github.com/abue-ammar/tinycast)
 
   ```sh
-  brew install --cask raycast
+  brew install --cask tinycast
 
-  # Advanced > Hyper Key > Capslock ✦
+  # General > Hyper Key > Capslock ✦
   # Extensions via [Install from store] (no list to see them, so just refer here):
   #    - Unicode Symbols Search
   #    - Color Picker
   #    - Unix Timestamp
+  #    - OCR
   # Extensions > Add these hotkeys...
-  #   - ✦ 1 - Zed
-  #   - ✦ 2 - WezTerm
+  #   - ✦ 1 - Zed (no more)
+  #   - ✦ 2 - Ghostty
   #   - ✦ 3 - Vivaldi
-  #   - ✦ 4 - Spotify
+  #   - ✦ 4 - Fastpotify (or Spotify)
   #   - ✦ F - Finder
   #   - ✦ N - Notion
-  #   - ✦ D - Notion
+  #   - ✦ D - Discord
   #   - ✦ S - Slack
   #   - ✦ M - Messenger
   ```
@@ -328,6 +328,9 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Httpie - Postman alternative, better. (I prefer the web just for quick, so no need to install). `brew install --cask httpie`
 - [x] herdr - `curl -fsSL https://herdr.dev/install.sh | sh` - tmux for agents
 - [x] Tailscale - `brew install tailscale`
+- [x] Yazi - `brew install yazi` - better file manager mostly
+- [x] Yazi - `brew install broot` - better file manager (second one I'm using)
+- [x] PngPaste - `brew install pngpaste` - CLI for posting images from clipboard to dir
 
 </details>
 
@@ -336,7 +339,6 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 
 - [x] Vivaldi - Favorite browser - `brew install --cask vivaldi`
 - Config is in [Vivaldi Guide](/VIVALDI_GUIDE.md)
-
 - [x] Handbrake - Video Converter - `brew install --cask handbrake`
 - [x] Keycastr - Keypress visualzier - `brew install --cask keycastr`
 - [x] Screen Studio - Slick Screen Recorder - `brew install --cask screen-studio`

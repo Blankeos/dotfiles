@@ -17,12 +17,11 @@ config.colors = {
 }
 config.max_fps = 120
 
--- Kitty keyboard: sends disambiguated ESC so TUIs (helix, lazygit,
--- crabcode) don't wait to tell lone ESC apart from Alt+key. Enabled
--- 2026-09-05 after updating to nightly (stable 20240203 had the
--- double/hold-ESC kitty bug). If ESC still misbehaves through
--- wezterm -> herdr, flip back to false.
-config.enable_kitty_keyboard = true
+-- Disabled 2026-09-06: true gives fast ESC in inner TUIs (helix,
+-- lazygit, crabcode) but breaks herdr prefix+w picker Enter/Esc.
+-- Herdr 0.8.2 troubleshooting notes kitty double-fire issues (#1116).
+-- Keep false until herdr picker handles CSI-u.
+config.enable_kitty_keyboard = false
  
 config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
