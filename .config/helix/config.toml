@@ -33,7 +33,8 @@ C-y = [
 
 # Preview markdown in crabmd (GPUI app)
 [keys.normal.space]
-m = ':sh crabmd "%{buffer_name}:%{cursor_line}:%{cursor_column}" >/dev/null 2>&1 &'
+m = ':sh crabmd "%{buffer_name}:%{cursor_line}:%{cursor_column}"'
+
 # Yank path menu (space Y …). Single :sh so which-key shows the raw command.
 # (space y stays Helix's default yank-to-clipboard)
 [keys.normal.space.Y]

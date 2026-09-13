@@ -1,6 +1,6 @@
 # Sidebar mode: current dir only (no parent / preview)
 [mgr]
-ratio = [0, 1, 0]
+# ratio = [0, 1, 0]
 show_hidden = true
 
 [opener]
