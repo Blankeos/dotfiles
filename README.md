@@ -147,7 +147,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   #    - Color Picker
   #    - Unix Timestamp
   #    - OCR
-  # Extensions > Add these hotkeys...
+  # Applications > Add these hotkeys...
   #   - ✦ 1 - Zed (no more)
   #   - ✦ 2 - Ghostty
   #   - ✦ 3 - Vivaldi
@@ -157,6 +157,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   #   - ✦ D - Discord
   #   - ✦ S - Slack
   #   - ✦ M - Messenger
+  # Commands > Import Raycast Scripts (from .config/raycast/scripts)
   ```
 
   - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight > Show Spotlight Search (off)

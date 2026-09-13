@@ -50,30 +50,6 @@
     // },
     "vercel": {
       "models": {
-        // "google/gemini-3.8-flash": {
-        //   "name": "Gemini 3.8 Flash",
-        //   "contextWindow": 1000000,
-        //   "reasoning": true,
-        //   "tool_call": true,
-        //   "attachment": true,
-        //   "modalities": {
-        //     "input": ["text", "image"],
-        //     "output": ["text"]
-        //   }
-        // },
-        // // Muse Spark 1.3: text out, vision+file input, reasoning, tool use, implicit caching
-        // // 1M ctx | 6.0s latency | $1.25/M in | $4.25/M out | $0.15/M cache read
-        // "meta/muse-spark-1.3": {
-        //   "name": "Muse Spark 1.3",
-        //   "contextWindow": 1000000,
-        //   "reasoning": true,
-        //   "tool_call": true,
-        //   "attachment": true,
-        //   "modalities": {
-        //     "input": ["text", "image"],
-        //     "output": ["text"]
-        //   }
-        // }
       }
     }
   },
