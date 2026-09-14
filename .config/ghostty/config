@@ -8,4 +8,6 @@ custom-shader = shaders/cursor_warp.glsl
 custom-shader = shaders/ripple_cursor.glsl
 custom-shader-animation = always
  macos-icon = blueprint
+# Left Option as Alt (helix Alt-binds); Right Option still types glyphs. (very important)
+macos-option-as-alt = left
 keybind = alt+backspace=text:\x1b\x7f
