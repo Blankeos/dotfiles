@@ -17,6 +17,16 @@ return {
         end,
         desc = "Lazygitrs",
       },
+      {
+        "<leader>gF",
+        function()
+          Snacks.terminal({ "lazygitrs", "-f", vim.fn.expand("%:p") }, {
+            cwd = LazyVim.root.git(),
+            win = { style = "lazygit" },
+          })
+        end,
+        desc = "Lazygitrs file history",
+      },
     },
   },
 }

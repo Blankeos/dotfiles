@@ -28,8 +28,12 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-# Open lazygitrs w/ ctrl-g
-"C-g" = [":new", ":insert-output lazygitrs", ":buffer-close!", ":redraw"]
+# Lazygitrs (space G …): g = open, f = file history. Capital G so `space g`
+# (changed-file picker) keeps working. No `:new` — that would switch to a
+# scratch buffer and `%{file_path_absolute}` would expand to cwd, not the file.
+[keys.normal.space.G]
+g = [":insert-output lazygitrs", ":redraw"]
+f = [":insert-output lazygitrs -f '%{file_path_absolute}'", ":redraw"]
 
 # Preview markdown in crabmd (GPUI app)
 [keys.normal.space]
