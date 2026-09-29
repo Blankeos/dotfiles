@@ -1,0 +1,10 @@
+# [[mgr.prepend_keymap]]
+# on  = "<C-p>"
+# run = "plugin fzf"
+# desc = "Fuzzy find file (VS Code Ctrl-P)"
+
+[[mgr.prepend_keymap]]
+on   = "<C-Space>"
+run  = "shell --orphan -- qlmanage -p %s >/dev/null 2>&1 & sleep 0.3; osascript -e 'tell application \"System Events\" to set frontmost of (first process whose name is \"qlmanage\") to true'"
+desc = "Quick Look (Finder Space)"
+for  = "macos"

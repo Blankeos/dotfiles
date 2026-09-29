@@ -7,12 +7,33 @@ show_hidden = true
 edit = [
   { run = 'hx "$@"', desc = "Open in helix", block = true, for = "unix" },
 ]
+ finder = [
+  { run = 'open -R "$@"', desc = "Reveal in Finder", orphan = true, for = "macos" },
+]
+folder = [
+  { run = 'open "$@"', desc = "Open folder in Finder", orphan = true, for = "macos" },
+]
+open = [
+  { run = 'open "$@"', desc = "Open with default app", orphan = true, for = "macos" },
+]
 
 [open]
 rules = [
-  { url = "*/", use = [] },
-  { mime = "text/*", use = "edit" },
-  { mime = "application/json", use = "edit" },
-  { mime = "inode/x-empty", use = "edit" },
-  { url = "*", use = "edit" },
-]
+  # dirs: Finder only (don't feed folders to hx)
+  { url = "*/", use = "folder" },
+
+  { mime = "text/*", use = [ "edit", "finder" ] },
+  { mime = "application/json", use = [ "edit", "finder" ] },
+  { mime = "application/pdf", use = [ "finder", "open" ] },
+  { url = "*.pdf", use = [ "finder", "open" ] },
+  { mime = "inode/x-empty", use = [ "edit", "finder" ] },
+  { mime = "image/*", use = [ "finder", "open" ] },
+  { url = "*.png", use = [ "finder", "open" ] },
+  { url = "*.jpg", use = [ "finder", "open" ] },
+  { url = "*.jpeg", use = [ "finder", "open" ] },
+  { url = "*.gif", use = [ "finder", "open" ] },
+  { url = "*.webp", use = [ "finder", "open" ] },
+  { url = "*.svg", use = [ "finder", "open" ] },
+  { url = "*.heic", use = [ "finder", "open" ] },
+  { url = "*.avif", use = [ "finder", "open" ] },
+  { url = "*", use = [ "edit", "finder" ] },]
