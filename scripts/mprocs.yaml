@@ -27,6 +27,8 @@ procs:
     shell: brew upgrade yt-dlp
   wezterm:
     shell: brew upgrade --cask wezterm
+  ghostty:
+    shell: brew upgrade --cask ghostty
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
@@ -44,6 +46,8 @@ procs:
     shell: cargo binstall --no-confirm crabenv
   gittydocs:
     shell: npm install -g gittydocs@latest
+  crabmd:
+    shell: brew upgrade --cask blankeos/tap/crabmd
   herdr-serve:
     shell: go install github.com/Blankeos/herdr-serve/cmd/herdr-serve@latest
 
