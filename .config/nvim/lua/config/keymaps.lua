@@ -50,6 +50,8 @@ keymap.set("n", "<leader>wx", "<C-w>c", { desc = "Delete window split" })
 -- Format
 keymap.set("n", ",f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
+-- keymap.set("n", "<leader>")
+
 -- Accessibility: Better Shift A and I in visual mode (Like in Zed)
 local function visual_selection_pos(mark)
   local pos = vim.fn.getpos(mark)
@@ -67,5 +69,28 @@ local function visual_start_insert()
   vim.cmd("startinsert")
 end
 
+-- Word wrap toggle (<leader>z is free; <leader>w is window prefix, <leader>uw already toggles wrap)
+keymap.set("n", "<leader>z", function()
+  vim.wo.wrap = not vim.wo.wrap
+  vim.notify((vim.wo.wrap and "Enabled" or "Disabled") .. " word wrap", vim.log.levels.INFO, { title = "Wrap" })
+end, { desc = "Toggle word wrap" })
+
+-- Replace instances in file (prefills :%s///g)
+keymap.set("n", "<leader>ss", ":%s///g<Left><Left>", { desc = "Replace instances in file" })
+keymap.set("v", "<leader>ss", ":s///g<Left><Left>", { desc = "Replace instances in selection" })
+
 keymap.set("x", "I", visual_start_insert, { desc = "Insert at start of visual selection" })
 keymap.set("x", "A", "<Esc>`>a", { desc = "Insert at end of visual selection" })
+
+-- Zed-style fold levels: z1 = top level only, z2 = top + 1, etc.
+for i = 1, 6 do
+  keymap.set("n", "z" .. i, function()
+    vim.opt.foldlevel = i
+  end, { desc = "Fold to level " .. i })
+end
+keymap.set("n", "z0", function()
+  vim.opt.foldlevel = 0
+end, { desc = "Close all folds" })
+keymap.set("n", "z9", function()
+  vim.opt.foldlevel = 99
+end, { desc = "Open all folds" })
