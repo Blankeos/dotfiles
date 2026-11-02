@@ -7,9 +7,14 @@
     // "native": { "web": true }
   },
 
-  // Herdr: each click opens a new tab running Neovim
-  "editor": {
-    "open": "tab=$(herdr tab create --focus --label nvim) && pane=$(printf '%s\\n' \"$tab\" | jq -er '.result.root_pane.pane_id // empty') && herdr pane run \"$pane\" nvim +{line} -- {pathname}",
+  // Herdr: UTF-8 text opens in a new Neovim tab; other files use system apps.
+  "fileActions": {
+    "open": {
+      "default": "system",
+      "overrides": {
+        "type:text": "tab=$(herdr tab create --focus --label nvim) && pane=$(printf '%s\\n' \"$tab\" | jq -er '.result.root_pane.pane_id // empty') && herdr pane run \"$pane\" nvim +{line} -- {pathname}",
+      },
+    },
   },
 
   "notifications": {
@@ -38,20 +43,22 @@
 
   // Add models on top of built-in providers (merged into /models catalog)
   "provider": {
-    // "opencode-go": {
-    //   "models": {
-    //     "muse-spark-1.3-contributor": {
-    //       "reasoning": true,
-    //       "reasoning_options": [
-    //         { "type": "effort", "values": ["minimal", "low", "medium", "high", "xhigh", "max"] }
-    //       ]
-    //     }
-    //   }
-    // },
-    "vercel": {
+    "opencode-go": {
       "models": {
-      }
-    }
+        "muse-spark-1.3-contributor": {
+          "reasoning": true,
+          "reasoning_options": [
+            {
+              "type": "effort",
+              "values": ["minimal", "low", "medium", "high", "xhigh", "max"],
+            },
+          ],
+        },
+      },
+    },
+    "vercel": {
+      "models": {},
+    },
   },
 
   "mcp": {
@@ -71,13 +78,20 @@
       "type": "remote",
       "url": "https://doop.design/mcp",
     },
+    "cloudflare": {
+      "type": "remote",
+      "url": "https://mcp.cloudflare.com/mcp",
+    },
+    "granola": {
+      "type": "remote",
+      "url": "https://mcp.granola.ai/mcp",
+    },
   },
-
 
   "agent": {
     "orchestrator": {
       "mode": "primary",
-      "prompt": "Never run glob/grep/read yourself; delegate all exploration to @explore. Your context is the expensive resource.",
+      "prompt": "Never run glob/grep/read yourself; delegate all exploration to @explore. Delegate all file edits and implementation to @executor with a precise spec (files, changes, acceptance checks). Use @general for research or multi-step tasks that don't fit @explore or @executor, and run independent tasks in parallel. Your context is the expensive resource.",
     },
     // --- START: Magnitude-style orchestrator ---
     // "magnitude": {
@@ -104,8 +118,8 @@
       // "model": "crof/deepseek-v4-flash",
       // "model": "xai/grok-4.6",
       // "model": "zai-coding-plan/glm-5.3-flash",
-      "model": "opencode-go/muse-spark-1.3-contributor",
-      "reasoningEffort": "low",
+      "model": "meridian/claude-haiku-5-5",
+      "reasoningEffort": "medium",
       // "model": "xai/grok-composer-2.5-fast",
       // "model": "xai/grok-4.5",
       // "max_steps": 12,
@@ -164,10 +178,11 @@
     // },
     "executor": {
       "mode": "subagent",
+      "description": "Implementation worker. Use for any file edit, write, or refactor. Give it a concrete spec (files, changes, checks).",
       // "model": "zai-coding-plan/glm-5.3",
       // "model": "xai/grok-4.6",
-      "model": "opencode-go/muse-spark-1.3-contributor",
-      "reasoningEffort": "xhigh",
+      "model": "meridian/claude-sonnet-5-5",
+      // "reasoningEffort": "xhigh",
       // "model": "crof/deepseek-v4-flash-0731", // fast cheap smart model
       // "model": "vercel/meta/muse-spark-1.2-contributor", // smart model? super cheap
       "prompt": "You are a specialized worker agent that performs the actual coding work based on the instructions provided by the orchestrator.",
