@@ -2,6 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+vim.api.nvim_create_user_command("Wnf", function(opts)
+  vim.cmd.write({ bang = opts.bang, mods = { noautocmd = true } })
+end, { bang = true, desc = "Write without save autocommands (including formatting)" })
+
 -- Keep Markdown editing plain/raw. LazyVim sets conceallevel=2 globally, which
 -- hides link destinations, inline-code backticks, and fenced-code markers until
 -- the cursor is on the line. For writing Markdown, show the actual source.
