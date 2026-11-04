@@ -29,6 +29,14 @@ procs:
     shell: brew upgrade --cask wezterm
   ghostty:
     shell: brew upgrade --cask ghostty
+  cua-driver:
+    shell: cua-driver update --apply
+  agent-desktop:
+    shell: bun install -g agent-desktop
+  agent-browser:
+    shell: bun install -g agent-browser
+  hex:
+    shell: brew ugprade --cask anomalyco/tap/hex
   # My Tools
   lazygitrs:
     shell: cargo binstall --no-confirm lazygitrs
@@ -50,4 +58,3 @@ procs:
     shell: brew upgrade --cask blankeos/tap/crabmd
   herdr-serve:
     shell: go install github.com/Blankeos/herdr-serve/cmd/herdr-serve@latest
-
