@@ -1,13 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
+    "additionalDirectories": ["/Users/carlo/worktrees", "/tmp"],
     "allow": [
       "Read(**)",
       "Write(./**)",
-      "Bash(**)"
+      "Write(/Users/carlo/worktrees/**)",
+      "Write(/tmp/**)",
+      "Edit(/Users/carlo/worktrees/**)",
+      "Edit(/tmp/**)",
+      "Bash(**)",
+      "Bash(git push**)"
     ],
     "deny": [
-      "Bash(git push**)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ~/)",
+      "Bash(rm -rf ~/*)",
+      "Bash(rm -rf $HOME**)",
       "Bash(git branch -d**)",
       "Bash(git branch -D**)",
       "Bash(git reset --hard**)",
@@ -16,20 +27,11 @@
     ],
     "ask": [
       "Read(**/.env*)",
-      "Read(**/.gitignore*)",
       "Read(**/.git/**)",
-      "Read(**/*.env)",
-      "Read(**/.gitignore)",
-      "Read(../**)",
-      "Read(../../**)",
-      "Read(/absolute/paths/outside/**)",
-      "Write(../**)",
-      "Write(../../**)",
-      "Write(/absolute/paths/outside/**)",
-      "Bash(rm *)",
-      "Bash(rm -**)"
+      "Read(**/*.env)"
     ]
   },
+  "model": "opus",
   "hooks": {
     "PermissionDenied": [
       {
@@ -76,5 +78,33 @@
       }
     ]
   },
-  "tui": "fullscreen"
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "enabledPlugins": {
+    "paper-desktop@paper": true,
+    "slack@anthropic-plugin-directory": true
+  },
+  "extraKnownMarketplaces": {
+    "paper": {
+      "source": {
+        "source": "github",
+        "repo": "paper-design/agent-plugins"
+      }
+    }
+  },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-haiku-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "tui": "fullscreen",
+  "statusLine": {
+    "type": "command",
+    "command": "'/Applications/Codync.app/Contents/Resources/codync-host' statusline"
+  }
 }
