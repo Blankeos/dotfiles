@@ -1,0 +1,8 @@
+{
+  "name": "mcp-sync",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  }
+}

@@ -1,3 +1,5 @@
 .env
 mprocs.log
-.local/chrome-cdp/
+.local/chrome-cdp*/
+
+scripts/mcp-sync/node_modules

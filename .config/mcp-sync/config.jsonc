@@ -1,0 +1,14 @@
+{
+  // Agents to write MCP servers into (see TARGETS in scripts/mcp-sync/mcp-sync.ts).
+  "targets": ["opencode", "crabcode", "claude", "codex"],
+
+  // OpenCode shape. Secrets as "{env:NAME}". Optional per-server "targets": ["claude"].
+  "mcp": {
+    "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
+    "gh_grep": { "type": "remote", "url": "https://mcp.grep.app" },
+    "cua-driver": { "type": "local", "command": ["~/.local/bin/cua-driver", "mcp"] },
+    "doop": { "type": "remote", "url": "https://doop.design/mcp" },
+    "cloudflare": { "type": "remote", "url": "https://mcp.cloudflare.com/mcp" },
+    "granola": { "type": "remote", "url": "https://mcp.granola.ai/mcp" },
+  },
+}
