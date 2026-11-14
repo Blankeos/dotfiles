@@ -110,6 +110,20 @@ cd ~/dotfiles
 stow . # Now symlinked, you can keep editing and pushing to this repo.
 ```
 
+#### 5. Install Global Skills ([skillshare](https://github.com/runkids/skillshare))
+
+My global agent skills live in `~/dotfiles/.config/skillshare/skills` (stow links it to `~/.config/skillshare`). Run this after `stow .`:
+
+```sh
+brew install skillshare
+skillshare sync # links the skills into ~/.agents/skills and ~/.claude/skills
+skillshare install # (optional) re-fetch third-party skills from their recorded sources
+
+# Adding skills
+skillshare install vercel-labs/agent-browser -s agent-browser # third-party (GitHub user/repo)
+# Or for my own: create ~/.config/skillshare/skills/<name>/SKILL.md, then `skillshare sync`
+```
+
 #### Additional
 
 <details>
@@ -147,11 +161,12 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
   #    - Color Picker
   #    - Unix Timestamp
   #    - OCR
-  # Applications > Add these hotkeys...
+  # Applications > Add these hotkeys... (Much up-to-date in .config/tinycast/settings.json)
   #   - ✦ 1 - Zed (no more)
   #   - ✦ 2 - Ghostty
   #   - ✦ 3 - Vivaldi
-  #   - ✦ 4 - Fastpotify (or Spotify)
+  #   - ✦ 4 - Spotify
+  #   - ✦ C - Codync (or Grok Bot)
   #   - ✦ F - Finder
   #   - ✦ N - Notion
   #   - ✦ D - Discord
@@ -171,6 +186,7 @@ stow . # Now symlinked, you can keep editing and pushing to this repo.
 - [x] Install [Mac Mouse Fix](https://github.com/noah-nuebling/mac-mouse-fix) - I think it's better than LogiOptions+.
 
 - [x] Finder Tips to help find large files
+
   - Check Finder > Settings > Hard disks ✅
   - Do this for some folders only (Start with Macintosh HD): Cmd+J (or View > Show View Options) > Calculate all sizes ✅
 

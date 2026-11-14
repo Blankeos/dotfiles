@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
-    "additionalDirectories": ["/Users/carlo/worktrees", "/tmp"],
+    "additionalDirectories": ["~/worktrees", "/tmp"],
     "allow": [
       "Read(**)",
       "Write(./**)",
@@ -25,11 +25,7 @@
       "Bash(git clean -f**)",
       "Bash(git rebase -i**)"
     ],
-    "ask": [
-      "Read(**/.env*)",
-      "Read(**/.git/**)",
-      "Read(**/*.env)"
-    ]
+    "ask": ["Read(**/.env*)", "Read(**/.git/**)", "Read(**/*.env)"]
   },
   "model": "opus",
   "hooks": {

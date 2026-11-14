@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "entries": {
+    "agent-browser": {
+      "source": "github.com/vercel-labs/agent-browser/skills/agent-browser",
+      "type": "github-subdir",
+      "installed_at": "2026-11-15T07:07:56.871955+08:00",
+      "repo_url": "https://github.com/vercel-labs/agent-browser.git",
+      "subdir": "skills/agent-browser",
+      "version": "e0c121a",
+      "tree_hash": "d75a393c9a371295c6d6be46c34938e76ef21184",
+      "commit": "e0c121a96d3a5412e2078e0c8eba3f4d2db2b616",
+      "file_hashes": {
+        "SKILL.md": "sha256:7d46deeb0101e84f8d70fd2e5cd18e3b6017edfb973607ff23e95e22c92ce73e"
+      }
+    }
+  }
+}

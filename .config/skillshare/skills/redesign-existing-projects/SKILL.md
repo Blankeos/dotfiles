@@ -71,6 +71,7 @@ Check for these problems and fix them:
 - **No error states.** Add clear, inline error messages for forms. Do not use `window.alert()`.
 - **Dead links.** Buttons that link to `#`. Either link to real destinations or visually disable them.
 - **No indication of current page in navigation.** Style the active nav link differently so users know where they are.
+- **Left accent borders on rounded items.** Avoid decorative `border-left` accents or inset-shadow rails on rounded navigation rows, list items, and cards—the accent curves with the corners and creates an unwanted rounded left-edge look. Prefer a subtle background or text-color change for selection. Preserve accessible keyboard-focus outlines.
 - **Scroll jumping.** Anchor clicks jump instantly. Add `scroll-behavior: smooth`.
 - **Animations using `top`, `left`, `width`, `height`.** Switch to `transform` and `opacity` for GPU-accelerated, smooth animation.
 
