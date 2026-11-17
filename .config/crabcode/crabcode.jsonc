@@ -86,6 +86,10 @@
       "type": "remote",
       "url": "https://mcp.granola.ai/mcp",
     },
+    "slack": {
+      "type": "remote",
+      "url": "https://mcp.slack.com/mcp"
+    },
   },
 
   "agent": {

@@ -10,5 +10,6 @@
     "doop": { "type": "remote", "url": "https://doop.design/mcp" },
     "cloudflare": { "type": "remote", "url": "https://mcp.cloudflare.com/mcp" },
     "granola": { "type": "remote", "url": "https://mcp.granola.ai/mcp" },
+    "slack": { "type": "remote", "url": "https://mcp.slack.com/mcp" },
   },
 }
