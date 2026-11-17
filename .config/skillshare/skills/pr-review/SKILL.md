@@ -28,7 +28,7 @@ Body in this order, short and plain:
 Model: <model id>, <thinking effort, or "effort unknown">
 
 ## Confidence: X/5
-<one line on why>
+**[<Low|Medium|High> impact]** <one line on why: is it safe to merge, what's left>
 **Checks run:** what you ran and the result (e.g. "cargo test: 212 passed", "White theme screenshot below").
 **Confidence bumps:** only what you truly can't do yourself (real hardware, another OS, secrets, production data), each with why and what it would raise the score to (e.g. "run the migration on staging (no staging access) → 4.5/5"). Otherwise "none left".
 
@@ -45,6 +45,16 @@ Model: <model id>, <thinking effort, or "effort unknown">
 ## Before merging
 - [ ] checklist
 ```
+
+## Impact
+The bracketed tag says how much the change could break if it's wrong, separate from confidence (how sure you are
+it's right). Judge the blast radius, not the diff size:
+- **Low:** docs, tests, copy, styling, a dev script, or code behind a flag few people hit. A bug is cosmetic or easy to undo.
+- **Medium:** a user-facing feature or fix, a few areas touched, a contained API or UI change. A bug hurts one flow.
+- **High:** auth, payments, permissions, data writes or migrations, security, shared core code, the build or release,
+  or a public API. A bug loses data, locks people out or breaks everyone.
+
+Pick the highest that applies. A 5/5 PR can still be High impact.
 
 ## The diagram
 It shows what the change does, as it happens, and is read by someone who hasn't opened the diff.
