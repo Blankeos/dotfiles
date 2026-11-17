@@ -8,6 +8,7 @@ tap "kitlangton/tap"
 tap "leepokai/codync"
 tap "omsimos/tap"
 tap "posthog/tap"
+tap "schpet/tap"
 tap "steipete/tap"
 
 # languages / runtimes
@@ -53,11 +54,12 @@ brew "caddy"
 brew "cloudflared"
 brew "flyctl"
 brew "railway"
-brew "vercel"
+cask "vercel"   # moved from homebrew/core to cask
 brew "redis"
 brew "docker-buildx"
 brew "tailscale"
 brew "posthog/tap/posthog-cli", trusted: true
+brew "schpet/tap/linear", trusted: true   # linear CLI (`linear auth`)
 cask "gcloud-cli"
 cask "ngrok"
 cask "orbstack"

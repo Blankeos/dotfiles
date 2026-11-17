@@ -27,8 +27,19 @@ go_tools \
   mvdan.cc/gofumpt \
   honnef.co/go/tools/cmd/staticcheck \
   github.com/pressly/goose/v3/cmd/goose \
-  github.com/wailsapp/wails/v2/cmd/wails \
-  github.com/Blankeos/herdr-serve/cmd/herdr-serve
+  github.com/wailsapp/wails/v2/cmd/wails
+
+# herdr-serve: `go install` can't build it (its web/dist isn't in the module), so use the release binary.
+if ! has herdr-serve || updating; then
+  log "herdr-serve"
+  case "$(uname -s)-$(uname -m)" in
+    Darwin-arm64) t=aarch64-apple-darwin ;; Darwin-x86_64) t=x86_64-apple-darwin ;;
+    Linux-aarch64) t=aarch64-unknown-linux-gnu ;; *) t=x86_64-unknown-linux-gnu ;;
+  esac
+  mkdir -p "$HOME/.local/bin"
+  curl -fsSL "https://github.com/Blankeos/herdr-serve/releases/latest/download/herdr-serve-$t.tar.xz" \
+    | tar -xJ -C "$HOME/.local/bin" herdr-serve || warn herdr-serve
+fi
 
 log "bun globals"
 bun_tools \

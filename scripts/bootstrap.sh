@@ -86,6 +86,16 @@ done
 
 # 3. Configs
 log "stow"
+# Real files in the way (default .zshrc, a fresh ~/.claude/settings.json…) lose to the repo copy:
+# move them to ~/.dotfiles-backup/<time>/ first, so stow never aborts.
+conflicts="$(cd "$DOTFILES" && stow -n -R . 2>&1 | sed -n 's/.*over existing target \(.*\) since.*/\1/p')"
+if [ -n "$conflicts" ]; then
+  backup="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+  while IFS= read -r t; do
+    mkdir -p "$backup/$(dirname "$t")" && mv "$HOME/$t" "$backup/$t" && echo "  backed up ~/$t"
+  done <<<"$conflicts"
+  log "moved conflicting files to $backup"
+fi
 (cd "$DOTFILES" && stow -R .) || warn "stow conflicts: move the listed files away (or 'stow --adopt .' then review git diff)"
 
 # 4. Hooks
