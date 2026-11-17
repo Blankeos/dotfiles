@@ -180,8 +180,8 @@ export PATH="/Users/carlo/.local/bin:$PATH"
 # Dashmon
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-# deno
-. "/Users/carlo/.deno/env"
+# # deno
+# . "/Users/carlo/.deno/env"
 
 # NativeScript Add ruby and rubygems to the path
 export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
