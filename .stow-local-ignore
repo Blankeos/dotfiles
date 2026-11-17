@@ -1,7 +1,6 @@
 fonts/*
 vscode-settings.jsonc
 \.env
-nvim
 skills-lock\.json
 mprocs.log
 scripts/*
