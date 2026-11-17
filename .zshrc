@@ -194,8 +194,10 @@ export PATH=/usr/local/lib/ruby/bin:/usr/local/lib/ruby/gems/3.3.0/bin:$PATH
 export PATH=/Users/carlo/.termcast/compiled/tuitube/bin:$PATH
 
 # Valdi configuration begin
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+if [ -d /opt/homebrew/opt/openjdk@11 ]; then
+  export JAVA_HOME="/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
+  export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+fi
 export ANDROID_HOME="$HOME/.valdi/android_home"
 export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
 # Valdi configuration end
