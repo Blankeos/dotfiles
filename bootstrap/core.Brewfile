@@ -1,0 +1,22 @@
+# core: always installed. Shell + the CLI basics every machine gets.
+
+brew "stow"
+brew "git"
+brew "gh"
+brew "ripgrep"
+brew "fzf"
+brew "zoxide"
+brew "eza"
+brew "starship"
+brew "zsh-autosuggestions"
+brew "neovim"
+brew "lazygit"
+brew "git-delta"
+brew "yazi"
+brew "broot"
+brew "mprocs"
+brew "just"
+brew "rsync"
+
+cask "font-zed-mono"
+cask "font-blex-mono-nerd-font"

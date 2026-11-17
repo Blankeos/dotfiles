@@ -3,3 +3,4 @@ mprocs.log
 .local/chrome-cdp*/
 
 scripts/mcp-sync/node_modules
+.categories

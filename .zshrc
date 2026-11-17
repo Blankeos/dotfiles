@@ -158,8 +158,8 @@ export BUN_INSTALL="$HOME/.bun"
 # bun completions
 [ -s "/Users/carlo/.bun/_bun" ] && source "/Users/carlo/.bun/_bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-eval "$(fnm env --use-on-cd --shell zsh)"
-export PATH="$PATH:$(go env GOPATH)/bin"
+command -v fnm >/dev/null && eval "$(fnm env --use-on-cd --shell zsh)"
+command -v go >/dev/null && export PATH="$PATH:$(go env GOPATH)/bin"
 
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"

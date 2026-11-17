@@ -11,3 +11,5 @@ VIVALDI_GUIDE.md
 
 .config/zed/extensions.back
 .config/zed/settings.json.back
+bootstrap
+\.categories
